@@ -1,0 +1,2711 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>지당지유 건강필래 | 당뇨병 예방 및 건강관리 종합 안내</title>
+  <style>
+    :root {
+      --bg-main: #f2f4f3;
+      --bg-card: #fafbfb;
+      --bg-soft-green: #e7eeea;
+      --bg-soft-blue: #e9eff3;
+      --bg-soft-amber: #f6f1e6;
+      --bg-soft-rose: #f6ecec;
+      --primary: #2f6653;
+      --primary-dark: #1f483a;
+      --secondary: #3f6882;
+      --accent: #b56c26;
+      --danger: #b34242;
+      --text-main: #222625;
+      --text-sub: #505755;
+      --border: #d5dcd9;
+      --shadow: 0 3px 14px rgba(30, 38, 35, 0.05);
+      --radius-lg: 14px;
+      --radius-md: 10px;
+      --font-scale: 1;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: calc(17px * var(--font-scale));
+      overflow-x: hidden;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Pretendard', 'Noto Sans KR', 'Malgun Gothic', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.65;
+      word-break: keep-all;
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    /* 상단 유틸리티 & 헤더 */
+    .top-utility {
+      background: #234539;
+      color: #ffffff;
+      padding: 8px 20px;
+      font-size: 0.85rem;
+    }
+
+    .top-utility-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .font-controls {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .font-btn {
+      background: rgba(255, 255, 255, 0.16);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .font-btn.active,
+    .font-btn:hover {
+      background: #ffffff;
+      color: #1f483a;
+    }
+
+    header.site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(250, 251, 251, 0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 2px solid var(--border);
+      box-shadow: 0 3px 14px rgba(0, 0, 0, 0.04);
+      width: 100%;
+    }
+
+    .header-top {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+
+    .brand-logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      flex-shrink: 0;
+      box-shadow: 0 4px 10px rgba(47, 102, 83, 0.22);
+    }
+
+    .brand-title {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .brand-sub {
+      font-size: 0.82rem;
+      color: var(--text-sub);
+      font-weight: 500;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      transition: 0.2s;
+    }
+
+    .btn-print {
+      background: var(--bg-soft-blue);
+      color: var(--secondary);
+      border: 1px solid #bfd1dc;
+    }
+
+    .btn-print:hover {
+      background: #dce6ec;
+    }
+
+    .btn-pdf {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-pdf:hover {
+      background: var(--primary-dark);
+    }
+
+    .mobile-menu-toggle {
+      display: none;
+      background: var(--bg-soft-green);
+      color: var(--primary-dark);
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+    }
+
+    /* 10개 메인 메뉴 내비게이션 */
+    nav.main-nav {
+      background: #eaeceb;
+      border-top: 1px solid var(--border);
+    }
+
+    .nav-list {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 8px 20px;
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .nav-list a {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 7px 12px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--text-main);
+      font-size: 0.86rem;
+      font-weight: 700;
+      transition: 0.2s;
+      background: #fafbfb;
+      border: 1px solid var(--border);
+    }
+
+    .nav-list a:hover,
+    .nav-list a.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+
+    .nav-num {
+      display: inline-block;
+      min-width: 20px;
+      height: 20px;
+      line-height: 20px;
+      text-align: center;
+      border-radius: 50%;
+      background: var(--bg-soft-green);
+      color: var(--primary-dark);
+      font-size: 0.75rem;
+      font-weight: 800;
+    }
+
+    .nav-list a:hover .nav-num,
+    .nav-list a.active .nav-num {
+      background: #ffffff;
+      color: var(--primary-dark);
+    }
+
+    /* 히어로 메인 배너 */
+    .hero-section {
+      background: linear-gradient(180deg, #e8ecea 0%, #f2f4f3 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 44px 20px;
+    }
+
+    .hero-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.25fr 0.95fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fafbfb;
+      color: var(--primary-dark);
+      border: 1px solid #c3d2cc;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .hero-title {
+      font-size: 2.15rem;
+      font-weight: 900;
+      color: #1a352c;
+      line-height: 1.3;
+      margin-bottom: 14px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-subtitle {
+      font-size: 1.12rem;
+      color: #3a4a44;
+      margin-bottom: 24px;
+      font-weight: 500;
+    }
+
+    .daily-tip-box {
+      background: #fafbfb;
+      border-left: 6px solid var(--primary);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+      border-top: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .daily-tip-label {
+      display: inline-block;
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      background: var(--bg-soft-green);
+      padding: 3px 10px;
+      border-radius: 6px;
+      margin-bottom: 6px;
+    }
+
+    .daily-tip-text {
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .hero-shortcuts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .shortcut-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: 0.2s;
+    }
+
+    .shortcut-primary {
+      background: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(47, 102, 83, 0.2);
+    }
+
+    .shortcut-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .shortcut-secondary {
+      background: #fafbfb;
+      color: var(--secondary);
+      border: 1.5px solid #bfd1dc;
+    }
+
+    .shortcut-secondary:hover {
+      background: var(--bg-soft-blue);
+      transform: translateY(-2px);
+    }
+
+    .hero-visual {
+      background: #fafbfb;
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    /* 공통 컨테이너 & 섹션 */
+    main.container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 36px 20px 64px;
+      display: flex;
+      flex-direction: column;
+      gap: 44px;
+      width: 100%;
+    }
+
+    section.content-section {
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      scroll-margin-top: 135px;
+      width: 100%;
+    }
+
+    .section-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding-bottom: 18px;
+      margin-bottom: 24px;
+      border-bottom: 2px solid var(--bg-soft-green);
+    }
+
+    .section-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-badge {
+      background: var(--primary);
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.88rem;
+      padding: 5px 12px;
+      border-radius: 999px;
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+    }
+
+    .section-desc {
+      color: var(--text-sub);
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    /* 그리드 & 카드 */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      width: 100%;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      width: 100%;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      width: 100%;
+    }
+
+    .span-2-card {
+      grid-column: span 2;
+    }
+
+    .info-card {
+      background: #f5f7f6;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      transition: 0.2s;
+      width: 100%;
+      min-width: 0;
+    }
+
+    .info-card:hover {
+      border-color: var(--primary);
+      box-shadow: 0 4px 14px rgba(47, 102, 83, 0.08);
+    }
+
+    .info-card h3 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .target-num {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: var(--primary-dark);
+      margin: 8px 0;
+    }
+
+    /* 메뉴 5 목표 카드 전용 통일 스타일 (굵기·크기·한 줄 배치) */
+    .goal-card-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .goal-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+      gap: 6px;
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.35;
+      white-space: nowrap;
+    }
+
+    .goal-row-label {
+      font-weight: 700;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+
+    .goal-pill {
+      display: inline-block;
+      background: #e1ede7;
+      color: #1f483a;
+      font-size: 0.84rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      letter-spacing: -0.02em;
+    }
+
+    .goal-pill-amber {
+      display: inline-block;
+      background: #f5ebd6;
+      color: #7d5318;
+      font-size: 0.84rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      letter-spacing: -0.02em;
+    }
+
+    .goal-sub-note {
+      font-size: 0.84rem;
+      font-weight: 500;
+      color: var(--text-sub);
+      margin-top: 10px;
+      line-height: 1.5;
+    }
+
+    .highlight-banner {
+      background: var(--bg-soft-green);
+      border: 1px solid #c3d2cc;
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      margin-bottom: 24px;
+    }
+
+    .highlight-banner h3 {
+      color: var(--primary-dark);
+      font-size: 1.18rem;
+      margin-bottom: 8px;
+    }
+
+    /* 프로세스 플로우 (메뉴 1) */
+    .process-flow {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin: 22px 0;
+    }
+
+    .process-step {
+      background: #f5f8f6;
+      border: 1.5px solid #c3d2cc;
+      border-radius: var(--radius-md);
+      padding: 18px;
+      text-align: center;
+      position: relative;
+    }
+
+    .step-circle {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+
+    /* 테이블 스타일 */
+    .table-wrap {
+      overflow-x: auto;
+      margin: 18px 0;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      width: 100%;
+    }
+
+    table.health-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 600px;
+      background: #fafbfb;
+    }
+
+    table.health-table th {
+      background: var(--primary);
+      color: #ffffff;
+      font-weight: 700;
+      padding: 14px 16px;
+      text-align: left;
+      font-size: 0.96rem;
+    }
+
+    table.health-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.95rem;
+    }
+
+    table.health-table tr:nth-child(even) td {
+      background: #f3f6f5;
+    }
+
+    /* 모바일 세로 화면에서도 좌우 스크롤 없이 한눈에 들어오는 비교표 전용 클래스 */
+    table.compare-table-responsive {
+      min-width: 100%;
+      table-layout: fixed;
+    }
+
+    .badge-normal {
+      display: inline-block;
+      background: #e1ede7;
+      color: #1f483a;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 6px;
+    }
+
+    .badge-prediabetes {
+      display: inline-block;
+      background: #f5ebd6;
+      color: #7d5318;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 6px;
+    }
+
+    .badge-diabetes {
+      display: inline-block;
+      background: #f4dddd;
+      color: #8a2c2c;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 6px;
+    }
+
+    /* 탭 & 의학 병리/해부 시각 카드 (메뉴 4 합병증) */
+    .tab-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .tab-btn {
+      padding: 10px 18px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: #f0f3f2;
+      color: var(--text-main);
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .tab-btn.active {
+      background: var(--secondary);
+      color: #ffffff;
+      border-color: var(--secondary);
+    }
+
+    .tab-panel {
+      display: none;
+      background: #f4f7f9;
+      border: 1px solid #c7d5de;
+      border-radius: var(--radius-md);
+      padding: 24px;
+      width: 100%;
+    }
+
+    .tab-panel.active {
+      display: grid;
+      grid-template-columns: 310px 1fr;
+      gap: 24px;
+      align-items: center;
+      width: 100%;
+    }
+
+    .comp-visual-card {
+      width: 310px;
+      background: #ffffff;
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid #c7d5de;
+      box-shadow: 0 2px 10px rgba(30, 38, 35, 0.06);
+      text-align: center;
+    }
+
+    .comp-visual-card svg {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .comp-visual-caption {
+      font-size: 0.86rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      line-height: 1.35;
+    }
+
+    .comp-visual-sub {
+      font-size: 0.78rem;
+      color: var(--text-sub);
+      margin-top: 3px;
+    }
+
+    /* 입체 당뇨 건강 식판 인터랙티브 스타일 */
+    .plate-slice {
+      cursor: pointer;
+      transition: transform 0.25s ease, filter 0.25s ease;
+      transform-origin: 180px 108px;
+    }
+    .plate-slice:hover {
+      filter: brightness(1.04) drop-shadow(0 4px 6px rgba(0,0,0,0.16));
+      transform: translateY(-3px);
+    }
+    .plate-slice.active-slice {
+      filter: brightness(1.03) drop-shadow(0 6px 8px rgba(31, 72, 58, 0.28));
+      transform: translateY(-4px);
+    }
+
+    .compare-box {
+      background: var(--bg-soft-blue);
+      border: 1px solid #c3d3de;
+      border-radius: var(--radius-md);
+      padding: 22px;
+      margin-top: 22px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group label {
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: var(--text-main);
+    }
+
+    .form-group input,
+    .form-group select {
+      padding: 11px 14px;
+      border-radius: 10px;
+      border: 1.5px solid #bdc9c4;
+      font-size: 1rem;
+      background: #ffffff;
+      color: var(--text-main);
+      font-family: inherit;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(47, 102, 83, 0.15);
+    }
+
+    /* 혈당 스파이크 그래프 컨트롤 (메뉴 6) */
+    .chart-card {
+      background: #fafbfb;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    .chart-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .chart-toggle-btn {
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: #eff2f1;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .chart-toggle-btn.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    /* 계산기 결과 패널 (메뉴 8) */
+    .calc-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .calc-input-panel {
+      background: #f4f7f5;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 22px;
+    }
+
+    .calc-result-panel {
+      background: #e9f0ed;
+      border: 1.5px solid #bccbc4;
+      border-radius: var(--radius-md);
+      padding: 24px;
+    }
+
+    .result-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin: 16px 0;
+    }
+
+    .metric-box {
+      background: #fafbfb;
+      border-radius: 10px;
+      padding: 14px;
+      border: 1px solid var(--border);
+    }
+
+    .metric-label {
+      font-size: 0.85rem;
+      color: var(--text-sub);
+      font-weight: 700;
+    }
+
+    .metric-value {
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: var(--primary-dark);
+      margin-top: 4px;
+    }
+
+    /* 체크리스트 & 진행률 (메뉴 9, 10) */
+    .progress-header {
+      background: #eff4f1;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 18px 22px;
+      margin-bottom: 20px;
+    }
+
+    .progress-bar-bg {
+      width: 100%;
+      height: 18px;
+      background: #d7e1dc;
+      border-radius: 999px;
+      overflow: hidden;
+      margin: 10px 0;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      width: 0%;
+      transition: width 0.35s ease;
+    }
+
+    .checklist-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 12px;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: #fafbfb;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+      cursor: pointer;
+      transition: 0.2s;
+      user-select: none;
+    }
+
+    .check-item:hover {
+      border-color: var(--primary);
+      background: #f2f6f4;
+    }
+
+    .check-item.checked {
+      background: var(--bg-soft-green);
+      border-color: var(--primary);
+    }
+
+    .check-item input[type="checkbox"] {
+      width: 22px;
+      height: 22px;
+      accent-color: var(--primary);
+      margin-top: 2px;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    /* 의료 주의사항 & 응급 안내 푸터 */
+    .emergency-box {
+      background: var(--bg-soft-rose);
+      border: 1.5px solid #dfb6b6;
+      border-radius: var(--radius-lg);
+      padding: 24px 28px;
+    }
+
+    .emergency-box h3 {
+      color: var(--danger);
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+    }
+
+    footer.site-footer {
+      background: #1e362e;
+      color: #d6e3de;
+      padding: 36px 20px;
+      font-size: 0.92rem;
+    }
+
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    /* 반응형 미디어 쿼리 */
+    @media (max-width: 1180px) {
+      .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 992px) {
+      .hero-inner,
+      .calc-wrapper {
+        grid-template-columns: 1fr;
+      }
+      .process-flow {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+      .span-2-card {
+        grid-column: auto !important;
+      }
+      .tab-panel.active {
+        grid-template-columns: 1fr;
+      }
+      .comp-visual-card {
+        width: 100%;
+        max-width: 380px;
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+      .header-actions {
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .btn-action {
+        flex: 1;
+        justify-content: center;
+        padding: 8px 10px;
+        font-size: 0.82rem;
+      }
+      .mobile-menu-toggle {
+        display: inline-flex;
+      }
+      .nav-list {
+        display: none;
+        flex-direction: column;
+      }
+      .nav-list.open {
+        display: flex;
+      }
+      .grid-2,
+      .grid-3,
+      .grid-4,
+      .process-flow,
+      .result-metrics {
+        grid-template-columns: 1fr;
+      }
+      .span-2-card {
+        grid-column: auto !important;
+      }
+      section.content-section {
+        padding: 22px 16px;
+      }
+      .hero-title {
+        font-size: 1.65rem;
+      }
+      .comp-visual-card {
+        width: 100%;
+        max-width: 100%;
+      }
+      /* 모바일 비교표가 좌우로 움직이지 않고 한 화면에 딱 맞도록 조정 */
+      table.compare-table-responsive th,
+      table.compare-table-responsive td {
+        padding: 9px 6px;
+        font-size: 0.78rem;
+        line-height: 1.35;
+        word-break: keep-all;
+      }
+      table.compare-table-responsive .badge-normal,
+      table.compare-table-responsive .badge-prediabetes,
+      table.compare-table-responsive .badge-diabetes {
+        padding: 2px 5px;
+        font-size: 0.75rem;
+      }
+    }
+
+    /* 인쇄 및 PDF 저장 전용 스타일 */
+    @media print {
+      .top-utility,
+      nav.main-nav,
+      .header-actions,
+      .mobile-menu-toggle,
+      .hero-shortcuts,
+      .chart-controls,
+      .tab-buttons {
+        display: none !important;
+      }
+      header.site-header {
+        position: static;
+        box-shadow: none;
+      }
+      body {
+        background: #ffffff;
+        font-size: 14px;
+      }
+      section.content-section {
+        box-shadow: none;
+        border: 1px solid #cccccc;
+        page-break-inside: avoid;
+        margin-bottom: 18px;
+      }
+      .tab-panel {
+        display: grid !important;
+        margin-bottom: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 상단 글자 크기 조절 바 -->
+  <div class="top-utility">
+    <div class="top-utility-inner">
+      <span>건강한 내일을 위한 당뇨병 예방·관리 교육 포털</span>
+      <div class="font-controls" aria-label="글자 크기 조절">
+        <span>글자 크기:</span>
+        <button type="button" id="fontBtnNormal" class="font-btn active" onclick="setFontScale(1, this)">보통</button>
+        <button type="button" id="fontBtnLarge" class="font-btn" onclick="setFontScale(1.12, this)">크게</button>
+        <button type="button" id="fontBtnXLarge" class="font-btn" onclick="setFontScale(1.24, this)">아주 크게</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 헤더 및 10대 메인 메뉴 -->
+  <header class="site-header">
+    <div class="header-top">
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <a href="#top" class="brand">
+          <div class="brand-logo" id="headerBrandLogo" aria-hidden="true" style="background: #b34242;">
+            <svg id="headerBrandSvg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" fill="currentColor" fill-opacity="0.25" stroke-width="2.2"/>
+              <path d="M12 9v6M9 12h6" stroke-width="2.2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div style="padding-top: 2px;">
+            <div class="brand-title" style="color: #1a3c31; font-size: 1.52rem; font-weight: 900; letter-spacing: -0.01em; line-height: 1.3;">지당지유 건강필래</div>
+            <div class="brand-sub" style="margin-top: 5px;">당뇨병 예방 및 혈당 건강관리 종합 안내</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="header-actions">
+        <button type="button" class="btn-action btn-print" onclick="triggerPrint()">🖨️ 화면 인쇄</button>
+        <button type="button" class="btn-action btn-pdf" onclick="saveHealthReportPDF()">📄 건강관리 결과 PDF 저장</button>
+        <button type="button" class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰ 메뉴</button>
+      </div>
+    </div>
+
+    <nav class="main-nav" aria-label="주 메뉴">
+      <ul class="nav-list" id="mainNavList">
+        <li><a href="#menu1"><span class="nav-num">1</span>당뇨병 바로 알기</a></li>
+        <li><a href="#menu2"><span class="nav-num">2</span>진단 및 판정 기준</a></li>
+        <li><a href="#menu3"><span class="nav-num">3</span>당뇨병과 동반질환</a></li>
+        <li><a href="#menu4"><span class="nav-num">4</span>당뇨병 합병증</a></li>
+        <li><a href="#menu5"><span class="nav-num">5</span>혈당 관리 및 목표</a></li>
+        <li><a href="#menu6"><span class="nav-num">6</span>혈당 스파이크</a></li>
+        <li><a href="#menu7"><span class="nav-num">7</span>올바른 식사법</a></li>
+        <li><a href="#menu8"><span class="nav-num">8</span>표준체중·열량 계산</a></li>
+        <li><a href="#menu9"><span class="nav-num">9</span>운동·생활습관</a></li>
+        <li><a href="#menu10"><span class="nav-num">10</span>건강관리 자가점검</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 메인 히어로 화면 -->
+  <section class="hero-section" id="top">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge">🌿 지당지유(知糖知癒) · 당을 알고 치유가 보입니다</div>
+        <h1 class="hero-title">"당뇨를 알고, 생활습관을 바꾸면 건강이 보입니다."</h1>
+        <p class="hero-subtitle">올바른 식사, 꾸준한 운동, 정기적인 혈당 관리로 건강한 내일을 만들어 보세요.</p>
+
+        <div class="daily-tip-box">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+            <span class="daily-tip-label">💡 오늘의 건강관리 실천 메시지</span>
+            <button type="button" onclick="nextDailyMessage()" style="background:none; border:none; color:var(--secondary); font-weight:700; cursor:pointer; font-size:0.85rem;">다른 메시지 보기 ↻</button>
+          </div>
+          <p class="daily-tip-text" id="dailyMessageText">식사할 때는 채소와 반찬을 먼저 드시고, 밥이나 면은 천천히 나중에 드시면 식후 혈당 급상승을 크게 줄일 수 있습니다.</p>
+        </div>
+
+        <div class="hero-shortcuts">
+          <a href="#menu2" class="shortcut-btn shortcut-primary">📋 당뇨병 진단 기준 보기</a>
+          <a href="#menu8" class="shortcut-btn shortcut-secondary">🧮 표준체중·열량 계산기</a>
+          <a href="#menu5" class="shortcut-btn shortcut-secondary">🎯 내 혈당·혈압 목표 확인</a>
+          <a href="#menu10" class="shortcut-btn shortcut-secondary">✅ 오늘의 자가점검</a>
+        </div>
+      </div>
+
+      <!-- 대표 일러스트 SVG -->
+      <div class="hero-visual">
+        <svg viewBox="0 0 420 290" width="100%" height="auto" role="img" aria-label="균형 잡힌 식단과 규칙적인 운동, 혈당 측정을 통한 당뇨 건강관리 일러스트">
+          <rect x="10" y="10" width="400" height="270" rx="20" fill="#eef3f0" stroke="#c7d4cf" stroke-width="2"/>
+          <rect x="155" y="34" width="110" height="155" rx="18" fill="#ffffff" stroke="#2f6653" stroke-width="3"/>
+          <rect x="171" y="52" width="78" height="58" rx="8" fill="#e7eeea"/>
+          <text x="210" y="77" text-anchor="middle" font-size="11" font-weight="700" fill="#2f6653">공복혈당 목표</text>
+          <text x="210" y="99" text-anchor="middle" font-size="18" font-weight="900" fill="#1f483a">98 mg/dL</text>
+          <circle cx="210" cy="145" r="18" fill="#2f6653"/>
+          <path d="M202 145l5 5 11-11" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <circle cx="82" cy="125" r="46" fill="#ffffff" stroke="#8fb3a5" stroke-width="2.5"/>
+          <circle cx="82" cy="125" r="32" fill="#f3f7f5" stroke="#2f6653" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <text x="82" y="121" text-anchor="middle" font-size="22">🥗</text>
+          <text x="82" y="142" text-anchor="middle" font-size="11" font-weight="800" fill="#1f483a">균형 식사</text>
+          <circle cx="338" cy="125" r="46" fill="#ffffff" stroke="#96b4c7" stroke-width="2.5"/>
+          <circle cx="338" cy="125" r="32" fill="#f2f6f8" stroke="#3f6882" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <text x="338" y="121" text-anchor="middle" font-size="22">🚶</text>
+          <text x="338" y="142" text-anchor="middle" font-size="11" font-weight="800" fill="#2d4f64">식후 걷기</text>
+          <rect x="35" y="212" width="350" height="46" rx="12" fill="#ffffff" stroke="#c7d4cf"/>
+          <text x="210" y="233" text-anchor="middle" font-size="12.5" font-weight="800" fill="#1f483a">올바른 식습관 + 규칙적인 운동 + 정기 검진</text>
+          <text x="210" y="249" text-anchor="middle" font-size="11" font-weight="600" fill="#2f6653">꾸준한 작은 실천이 합병증을 예방합니다</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+
+    <!-- 메뉴 1. 당뇨병 바로 알기 -->
+    <section class="content-section" id="menu1">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-badge">메뉴 01</span>
+          <h2 class="section-title">당뇨병 바로 알기</h2>
+        </div>
+        <span style="font-size:0.9rem; color:var(--primary-dark); font-weight:700;">기초 개념과 주요 증상 이해</span>
+      </div>
+
+      <div class="highlight-banner">
+        <h3>🩺 당뇨병이란 무엇인가요?</h3>
+        <p>당뇨병은 우리 몸이 섭취한 음식물의 포도당을 에너지로 전환하는 <strong>포도당 대사의 이상</strong>(인슐린 분비 부족 또는 인슐린 저항성)으로 발생하는 대사질환입니다. 혈액 속 포도당 농도가 높아지는 <strong>만성 고혈당 상태</strong>가 지속되면서 여러 증상과 징후를 일으키고, 장기간 방치할 경우 눈, 신장, 신경, 심장과 뇌혈관 등 전신에 다양한 <strong>만성 합병증</strong>을 유발할 수 있습니다.</p>
+      </div>
+
+      <h3 style="font-size:1.15rem; margin-bottom:10px; color:var(--primary-dark);">📊 당뇨병의 발생 및 합병증 진행 과정</h3>
+      <div class="process-flow">
+        <div class="process-step">
+          <div class="step-circle">1</div>
+          <h4 style="font-weight:800; margin-bottom:6px;">포도당 대사 이상</h4>
+          <p style="font-size:0.9rem; color:var(--text-sub);">인슐린이 부족하거나 제 기능을 못해 포도당이 세포 속으로 들어가지 못함</p>
+        </div>
+        <div class="process-step">
+          <div class="step-circle">2</div>
+          <h4 style="font-weight:800; margin-bottom:6px;">만성 고혈당 상태</h4>
+          <p style="font-size:0.9rem; color:var(--text-sub);">사용되지 못한 포도당이 혈액 속에 쌓여 혈당 수치가 지속적으로 높아짐</p>
+        </div>
+        <div class="process-step">
+          <div class="step-circle">3</div>
+          <h4 style="font-weight:800; margin-bottom:6px;">신경 및 혈관 손상</h4>
+          <p style="font-size:0.9rem; color:var(--text-sub);">끈적해진 고혈당 혈액이 미세혈관과 큰 혈관, 신경 조직을 서서히 손상시킴</p>
+        </div>
+        <div class="process-step">
+          <div class="step-circle">4</div>
+          <h4 style="font-weight:800; margin-bottom:6px;">만성 합병증 발생</h4>
+          <p style="font-size:0.9rem; color:var(--text-sub);">망막병증, 신장병증, 신경병증, 심뇌혈관질환 등 다양한 합병증으로 진행</p>
+        </div>
+      </div>
+
+      <h3 style="font-size:1.15rem; margin:24px 0 12px; color:var(--primary-dark);">🚨 놓치지 말아야 할 당뇨병의 주요 증상</h3>
+      <div class="grid-4">
+        <div class="info-card">
+          <h3>💧 다뇨 (잦은 소변)</h3>
+          <p style="font-size:0.93rem;">혈액 속 넘치는 포도당을 신장이 소변으로 배출하려 하면서 소변량과 횟수가 크게 늘어납니다.</p>
+        </div>
+        <div class="info-card">
+          <h3>🥤 다음 (심한 갈증)</h3>
+          <p style="font-size:0.93rem;">소변으로 수분이 많이 빠져나가 몸에 탈수가 생기면서 자꾸 목이 마르고 물을 많이 마시게 됩니다.</p>
+        </div>
+        <div class="info-card">
+          <h3>⚖️ 설명되지 않는 체중 감소</h3>
+          <p style="font-size:0.93rem;">포도당을 에너지로 쓰지 못해 몸속 지방과 근육을 분해하므로 음식을 먹어도 살이 빠집니다.</p>
+        </div>
+        <div class="info-card">
+          <h3>🥱 피로감 및 시력 저하</h3>
+          <p style="font-size:0.93rem;">세포에 에너지가 공급되지 않아 쉽게 피로하고, 눈 수정체 삼투압 변화로 시야가 흐려질 수 있습니다.</p>
+        </div>
+      </div>
+      <p style="margin-top:12px; font-size:0.9rem; color:var(--text-sub);">※ 초기 당뇨병은 뚜렷한 증상이 없는 경우가 매우 많으므로 정기적인 혈액검사가 필수입니다.</p>
+    </section>
+
+    <!-- 메뉴 2. 당뇨병 진단 및 판정 기준 -->
+    <section class="content-section" id="menu2">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-badge">메뉴 02</span>
+          <h2 class="section-title">당뇨병 진단 및 판정 기준</h2>
+        </div>
+        <span style="font-size:0.9rem; color:var(--secondary); font-weight:700;">대한당뇨병학회 진료지침 기준</span>
+      </div>
+
+      <p class="section-desc">다음 <strong>4가지 진단 기준 중 하나 이상</strong>에 해당하면 당뇨병 진단을 고려합니다. (명백한 고혈당 증상이 없는 경우, 서로 다른 날 검사를 반복하여 확인합니다.)</p>
+
+      <div class="grid-4" style="margin-bottom:24px;">
+        <div class="info-card" style="border-top:5px solid var(--primary);">
+          <div style="font-size:0.85rem; font-weight:700; color:var(--text-sub);">기준 ① 당화혈색소(HbA1c)</div>
+          <div class="target-num">6.5% 이상</div>
+          <p style="font-size:0.9rem;">최근 2~3개월간의 평균 혈당 상태를 반영하는 지표입니다.</p>
+        </div>
+        <div class="info-card" style="border-top:5px solid var(--secondary);">
+          <div style="font-size:0.85rem; font-weight:700; color:var(--text-sub);">기준 ② 8시간 이상 공복혈당</div>
+          <div class="target-num" style="color:var(--secondary);">126 mg/dL 이상</div>
+          <p style="font-size:0.9rem;">최소 8시간 이상 금식한 후 측정한 공복 혈장 포도당 수치입니다.</p>
+        </div>
+        <div class="info-card" style="border-top:5px solid var(--accent);">
+          <div style="font-size:0.85rem; font-weight:700; color:var(--text-sub);">기준 ③ 경구포도당부하 2시간</div>
+          <div class="target-num" style="color:var(--accent);">200 mg/dL 이상</div>
+          <p style="font-size:0.9rem;">75g 포도당 용액을 마신 뒤 2시간 후에 측정한 혈당 수치입니다.</p>
+        </div>
+        <div class="info-card" style="border-top:5px solid var(--danger);">
+          <div style="font-size:0.85rem; font-weight:700; color:var(--text-sub);">기준 ④ 전형적 증상 + 무작위 혈당</div>
+          <div class="target-num" style="color:var(--danger);">200 mg/dL 이상</div>
+          <p style="font-size:0.9rem;">다뇨·다음·체중감소 증상이 있으면서 식사 시간과 무관하게 측정한 혈당입니다.</p>
+        </div>
+      </div>
+
+      <div class="highlight-banner" style="background:var(--bg-soft-blue); border-color:#c3d3de;">
+        <h3 style="color:#2b4c61;">🧪 경구포도당부하검사(OGTT)란 무엇인가요?</h3>
+        <p>공복 상태에서 혈당을 먼저 잰 뒤, <strong>75g의 포도당이 녹아 있는 용액을 마시고 시간별(보통 1시간, 2시간 후)로 혈당이 얼마나 올라가고 잘 떨어지는지 확인하는 정밀 검사</strong>입니다. 공복혈당만으로는 놓치기 쉬운 식후 혈당 조절 능력을 정확히 평가할 수 있습니다.</p>
+      </div>
+
+      <h3 style="font-size:1.15rem; margin:20px 0 10px; color:var(--primary-dark);">📋 정상 · 당뇨병 전단계 · 당뇨병 판정 기준 비교표</h3>
+      <div class="table-wrap">
+        <table class="health-table compare-table-responsive">
+          <thead>
+            <tr>
+              <th style="width:27%;">검사 항목</th>
+              <th style="width:23%;">정상 범위</th>
+              <th style="width:26%;">당뇨병 전단계 (주의)</th>
+              <th style="width:24%;">당뇨병 진단 기준</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>당화혈색소 (HbA1c)</strong></td>
+              <td><span class="badge-normal">5.7% 미만</span></td>
+              <td><span class="badge-prediabetes">5.7% ~ 6.4%</span></td>
+              <td><span class="badge-diabetes">6.5% 이상</span></td>
+            </tr>
+            <tr>
+              <td><strong>8시간 이상 공복 혈장 포도당</strong></td>
+              <td><span class="badge-normal">100 mg/dL 미만</span></td>
+              <td><span class="badge-prediabetes">100 ~ 125 mg/dL</span> (공복혈당장애)</td>
+              <td><span class="badge-diabetes">126 mg/dL 이상</span></td>
+            </tr>
+            <tr>
+              <td><strong>75g 경구포도당부하 2시간 후 혈당</strong></td>
+              <td><span class="badge-normal">140 mg/dL 미만</span></td>
+              <td><span class="badge-prediabetes">140 ~ 199 mg/dL</span> (내당능장애)</td>
+              <td><span class="badge-diabetes">200 mg/dL 이상</span></td>
+            </tr>
+            <tr>
+              <td><strong>무작위 혈장 포도당</strong></td>
+              <td><span style="font-size:0.86rem; color:var(--text-sub);">별도 기준 없음 (식사 시간에 따라 변동)</span></td>
+              <td><span style="font-size:0.86rem; color:var(--text-sub);">별도 기준 없음 (공복·식후 2시간 검사로 판정)</span></td>
+              <td><span class="badge-diabetes">200 mg/dL 이상</span> (전형적 증상 동반 시)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 메뉴 3. 당뇨병과 동반질환 -->
+    <section class="content-section" id="menu3">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-badge">메뉴 03</span>
+          <h2 class="section-title">당뇨병과 동반질환</h2>
+        </div>
+        <span style="font-size:0.9rem; color:var(--primary-dark); font-weight:700;">혈당과 함께 관리해야 할 대사 위험요인</span>
+      </div>
+
+      <p class="section-desc">당뇨병은 혈당만 단독으로 높아지는 병이 아니라 비만, 고혈압, 이상지질혈증과 뿌리를 공유합니다. 동반질환을 함께 조절해야 심뇌혈관 합병증을 막을 수 있습니다.</p>
+
+      <div class="grid-3">
+        <div class="info-card">
+          <h3>⚖️ 비만</h3>
+          <p style="font-size:0.93rem;">체질량지수(BMI) 25kg/㎡ 이상으로 체지방이 과도하게 축적된 상태입니다. 비만은 인슐린 저항성을 악화시켜 췌장의 인슐린 분비 부담을 높이고 혈당 조절을 어렵게 만듭니다.</p>
+        </div>
+        <div class="info-card">
+          <h3>📏 복부비만</h3>
+          <p style="font-size:0.93rem;">허리둘레 남자 90cm 이상, 여자 85cm 이상인 상태입니다. 내장지방에서 분비되는 염증 물질이 인슐린 작용을 직접 방해하여 당뇨병과 심혈관질환의 가장 강력한 위험인자가 됩니다.</p>
+        </div>
+        <div class="info-card">
+          <h3>💓 고혈압</h3>
+          <p style="font-size:0.93rem;">혈관 내 압력이 지속적으로 높은 상태입니다. 고혈당과 고혈압이 함께 있으면 혈관 내벽 손상이 가속화되어 뇌졸중, 심근경색, 신장병증 발생 위험이 수배로 급증합니다.</p>
+        </div>
+        <div class="info-card">
+          <h3>🩸 고콜레스테롤혈증</h3>
+          <p style="font-size:0.93rem;">혈액 내 LDL(나쁜) 콜레스테롤이나 중성지방이 높고 HDL(좋은) 콜레스테롤이 낮은 상태입니다. 혈관 벽에 기름 찌꺼기(죽상경화반)가 쌓여 혈관이 좁아지고 막히게 됩니다.</p>
+        </div>
+        <div class="info-card span-2-card" style="background: var(--bg-soft-amber); border-color:#e5d3b0;">
+          <h3 style="color:#854f19;">⚠️ 고혈압과 고콜레스테롤혈증의 동반 (대사증후군 위험)</h3>
+          <p style="font-size:0.95rem;">당뇨병 환자에게 고혈압과 고콜레스테롤혈증이 동시에 동반되면 <strong>혈관 손상이 시너지 효과를 일으켜 치명적인 심뇌혈관 사고 위험이 매우 높아집니다.</strong> 따라서 당뇨병 관리 시에는 혈당 수치뿐 아니라 혈압과 콜레스테롤 수치를 반드시 정기적으로 함께 점검하고 통합 관리해야 합니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 메뉴 4. 당뇨병 합병증 -->
+    <section class="content-section" id="menu4">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-badge">메뉴 04</span>
+          <h2 class="section-title">당뇨병 합병증</h2>
+        </div>
+        <span style="font-size:0.9rem; color:var(--danger); font-weight:700;">미세혈관 및 대혈관 합병증 예방</span>
+      </div>
+
+      <!-- 3대 발생 요인 -->
+      <div class="highlight-banner" style="background:var(--bg-soft-rose); border-color:#e3bfbf;">
+        <h3 style="color:#8c3232;">🔥 당뇨병 합병증의 3대 주요 발생 요인</h3>
+        <p>만성적인 <strong>① 고혈당</strong>, <strong>② 고혈압</strong>, <strong>③ 이상지질혈증</strong>이 지속되면 전신의 작은 혈관(미세혈관)과 큰 혈관(대혈관)이 손상되어 합병증이 발생합니다.</p>
+      </div>
+
+      <div class="grid-2" style="margin-bottom:24px;">
+        <div class="info-card" style="border-left:5px solid var(--primary);">
+          <h3>🔬 ① 미세혈관 합병증 (작은 혈관 손상)</h3>
+          <ul style="padding-left:20px; font-size:0.95rem; margin-top:8px;">
+            <li><strong>당뇨병성 망막병증:</strong> 눈 망막의 미세혈관 손상으로 시력 저하 및 실명 유발</li>
+            <li><strong>당뇨병성 신증:</strong> 콩팥(신장) 사구체 여과 기능 저하 및 단백뇨 발생</li>
+            <li><strong>당뇨병성 신경병증:</strong> 말초신경 및 자율신경 손상으로 통증·저림·기능 이상</li>
+          </ul>
+        </div>
+        <div class="info-card" style="border-left:5px solid var(--secondary);">
+          <h3>🫀 ② 대혈관 합병증 (큰 혈관 동맥경화)</h3>
+          <ul style="padding-left:20px; font-size:0.95rem; margin-top:8px;">
+            <li><strong>허혈성 심질환:</strong> 심장 관상동맥 협착 및 폐색(협심증, 심근경색)</li>
+            <li><strong>뇌졸중:</strong> 뇌혈관이 막히거나 터지는 질환(뇌경색, 뇌출혈)</li>
+            <li><strong>말초혈관질환:</strong> 다리와 발로 가는 동맥이 좁아져 혈액순환 장애 발생</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 style="font-size:1.15rem; margin-bottom:12px; color:var(--primary-dark);">🔎 ③ 주요 합병증 상세 안내 (항목을 눌러 실제 병변·해부 시각자료를 확인하세요)</h3>
+      <div class="tab-buttons" role="tablist">
+        <button type="button" class="tab-btn active" onclick="openCompTab('comp-eye', this)">👁️ 당뇨병성 망막병증</button>
+        <button type="button" class="tab-btn" onclick="openCompTab('comp-kidney', this)">🫘 당뇨병성 신증</button>
+        <button type="button" class="tab-btn" onclick="openCompTab('comp-nerve', this)">⚡ 당뇨병성 신경병증</button>
+        <button type="button" class="tab-btn" onclick="openCompTab('comp-foot', this)">🦶 당뇨병성 족부질환</button>
+        <button type="button" class="tab-btn" onclick="openCompTab('comp-heart', this)">🧠 심뇌혈관 질환</button>
+      </div>
+
+      <!-- 탭 1: 당뇨병성 망막병증 -->
+      <div class="tab-panel active" id="comp-eye">
+        <div class="comp-visual-card">
+          <svg viewBox="0 0 300 220" role="img" aria-label="당뇨병성 망막병증 안저 촬영 소견: 망막 출혈, 미세동맥류, 경성 삼출물 표시">
+            <defs>
+              <radialGradient id="fundusGrad" cx="48%" cy="50%" r="52%">
+                <stop offset="0%" stop-color="#f28c28"/>
+                <stop offset="68%" stop-color="#d85b18"/>
+                <stop offset="94%" stop-color="#8a280a"/>
+                <stop offset="100%" stop-color="#1a1210"/>
+              </radialGradient>
+              <radialGradient id="opticDisc" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#fff6b3"/>
+                <stop offset="65%" stop-color="#ffcf54"/>
+                <stop offset="100%" stop-color="#e88320"/>
+              </radialGradient>
+              <radialGradient id="maculaGrad" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#6e1d09" stop-opacity="0.75"/>
+                <stop offset="100%" stop-color="#d85b18" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <rect width="300" height="220" rx="8" fill="#121212"/>
+            <circle cx="150" cy="110" r="98" fill="url(#fundusGrad)"/>
+            <circle cx="172" cy="116" r="24" fill="url(#maculaGrad)"/>
+            <ellipse cx="86" cy="110" rx="16" ry="19" fill="url(#opticDisc)"/>
+            <g fill="none" stroke="#9e1911" stroke-linecap="round">
+              <path d="M86 104 Q115 62 175 48 Q210 42 236 62" stroke-width="3.2"/>
+              <path d="M128 70 Q158 76 196 72" stroke-width="2"/>
+              <path d="M168 49 Q188 34 212 36" stroke-width="1.8"/>
+              <path d="M86 116 Q116 158 175 174 Q212 180 235 162" stroke-width="3.2"/>
+              <path d="M132 152 Q164 146 202 152" stroke-width="2"/>
+              <path d="M83 102 Q66 72 58 46" stroke-width="2.4"/>
+              <path d="M83 118 Q64 150 56 176" stroke-width="2.4"/>
+            </g>
+            <ellipse cx="142" cy="54" rx="4.5" ry="3" fill="#6b0808"/>
+            <circle cx="165" cy="84" r="3.2" fill="#6b0808"/>
+            <ellipse cx="222" cy="136" rx="5" ry="3.5" fill="#6b0808"/>
+            <circle cx="72" cy="158" r="3.5" fill="#6b0808"/>
+            <circle cx="195" cy="112" r="2.6" fill="#6b0808"/>
+            <ellipse cx="182" cy="36" rx="6" ry="4" fill="#fff394" opacity="0.92"/>
+            <circle cx="198" cy="84" r="2.5" fill="#fff7ad"/>
+            <circle cx="204" cy="88" r="2" fill="#fff7ad"/>
+            <circle cx="195" cy="91" r="1.8" fill="#fff7ad"/>
+            <circle cx="194" cy="148" r="2.5" fill="#fff7ad"/>
+            <circle cx="201" cy="145" r="2.2" fill="#fff7ad"/>
+            <circle cx="183" cy="36" r="13" fill="none" stroke="#ffffff" stroke-width="1.8"/>
+            <circle cx="200" cy="87" r="12" fill="none" stroke="#ffffff" stroke-width="1.8"/>
+            <circle cx="198" cy="147" r="12" fill="none" stroke="#ffffff" stroke-width="1.8"/>
+            <path d="M142 82 L142 63 M138 68 L142 62 L146 68" stroke="#111111" stroke-width="2.2" fill="none"/>
+            <path d="M222 162 L222 145 M218 150 L222 144 L226 150" stroke="#111111" stroke-width="2.2" fill="none"/>
+            <rect x="8" y="188" width="284" height="24" rx="5" fill="rgba(0,0,0,0.72)"/>
+            <circle cx="24" cy="200" r="4.5" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="33" y="204" font-size="10" fill="#ffffff" font-weight="700">경성 삼출물(지질 침착)</text>
+            <circle cx="156" cy="200" r="4.5" fill="#a81414"/>
+            <text x="165" y="204" font-size="10" fill="#ffffff" font-weight="700">망막 출혈·미세동맥류</text>
+          </svg>
+          <div class="comp-visual-caption">안저 촬영 병변 소견 (망막 출혈·삼출물)</div>
+          <div class="comp-visual-sub">손상된 미세혈관에서 출혈과 삼출물이 누출된 모습</div>
+        </div>
+        <div>
+          <h4 style="font-size:1.15rem; color:var(--primary-dark); margin-bottom:8px;">당뇨병성 망막병증</h4>
+          <ul style="padding-left:20px; font-size:0.95rem; display:flex; flex-direction:column; gap:6px;">
+            <li><strong>정상 망막과의 차이:</strong> 정상 망막은 미세혈관이 깨끗하게 산소와 영양을 공급하지만, 당뇨병성 망막병증은 혈관이 약해져 <strong>미세동맥류, 망막 출혈, 황백색 경성 삼출물</strong>이 생기고 비정상적인 신생혈관이 자라납니다.</li>
+            <li><strong>시야 변화 및 시력 손상 가능성:</strong> 초기에는 증상이 없으나 진행되면 눈앞에 날파리가 떠다니는 느낌(비문증), 시야 흐림이 나타나며 방치 시 실명으로 이어질 수 있습니다.</li>
+            <li><strong>정기적인 안과 검진의 중요성:</strong> 증상이 없어도 진단 시점부터 <strong>최소 연 1회 정기 안저검사</strong>를 받아 조기에 발견하고 치료해야 합니다.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 탭 2: 당뇨병성 신증 -->
+      <div class="tab-panel" id="comp-kidney">
+        <div class="comp-visual-card">
+          <svg viewBox="0 0 300 220" role="img" aria-label="정상 매끄러운 신장과 표면이 울퉁불퉁하게 위축된 당뇨병성 신증 신장 비교 해부도">
+            <rect width="300" height="220" rx="8" fill="#f8faf9"/>
+            <rect x="10" y="12" width="134" height="196" rx="10" fill="#ffffff" stroke="#d5dcd9"/>
+            <path d="M68 38 C34 38, 30 144, 68 144 C85 144, 88 114, 78 92 C88 70, 85 38, 68 38 Z" fill="#b84435" stroke="#7d261c" stroke-width="2"/>
+            <path d="M52 54 C42 74, 42 110, 52 128" fill="none" stroke="#e38274" stroke-width="3" stroke-linecap="round"/>
+            <path d="M80 86 Q102 92 102 152" fill="none" stroke="#e6b88a" stroke-width="7" stroke-linecap="round"/>
+            <text x="77" y="168" text-anchor="middle" font-size="11.5" font-weight="800" fill="#1f483a">정상 신장</text>
+            <text x="77" y="183" text-anchor="middle" font-size="9.5" fill="#505755">매끄러운 표면·정상 여과</text>
+
+            <rect x="156" y="12" width="134" height="196" rx="10" fill="#ffffff" stroke="#dfb6b6"/>
+            <path d="M214 48 C186 48, 184 136, 214 136 C228 136, 230 110, 222 92 C230 74, 228 48, 214 48 Z" fill="#99342a" stroke="#631b14" stroke-width="2"/>
+            <g fill="#d97b6c" opacity="0.85">
+              <circle cx="202" cy="62" r="2.2"/><circle cx="212" cy="58" r="2"/><circle cx="196" cy="74" r="2.4"/>
+              <circle cx="208" cy="72" r="2"/><circle cx="195" cy="88" r="2.2"/><circle cx="206" cy="86" r="2.4"/>
+              <circle cx="196" cy="102" r="2.2"/><circle cx="208" cy="100" r="2"/><circle cx="200" cy="116" r="2.3"/>
+              <circle cx="212" cy="114" r="2.1"/><circle cx="206" cy="126" r="2"/>
+            </g>
+            <path d="M224 88 Q242 94 242 152" fill="none" stroke="#cfa174" stroke-width="6.5" stroke-linecap="round"/>
+            <text x="223" y="168" text-anchor="middle" font-size="11.5" font-weight="800" fill="#b34242">당뇨병성 신증</text>
+            <text x="223" y="183" text-anchor="middle" font-size="9.5" fill="#505755">과립형 표면·용적 위축</text>
+          </svg>
+          <div class="comp-visual-caption">정상 신장 vs 당뇨병성 신증 해부 비교</div>
+          <div class="comp-visual-sub">사구체 손상으로 표면이 거칠어지고 크기가 위축된 상태</div>
+        </div>
+        <div>
+          <h4 style="font-size:1.15rem; color:var(--primary-dark); margin-bottom:8px;">당뇨병성 신증 (신장합병증)</h4>
+          <ul style="padding-left:20px; font-size:0.95rem; display:flex; flex-direction:column; gap:6px;">
+            <li><strong>사구체여과율(eGFR) 저하:</strong> 콩팥의 미세혈관(사구체)이 손상·경화되면서 신장 표면이 거칠게 위축되고, 노폐물을 거르는 <strong>eGFR 60 mL/min/1.73㎡ 미만</strong>으로 저하됩니다.</li>
+            <li><strong>단백뇨 검출 및 전해질 이상:</strong> 손상된 사구체 필터를 통해 소변으로 단백질(알부민)이 빠져나오며, 체내 수분 및 전해질 균형이 깨집니다.</li>
+            <li><strong>동반 증상:</strong> 몸이 붓는 <strong>부종</strong>, <strong>빈혈</strong>, 그리고 신장 기능 저하로 인한 <strong>혈압 상승</strong>이 나타날 수 있습니다.</li>
+            <li><strong>정기검사의 중요성:</strong> 매년 소변 알부민뇨 검사와 혈액 신장기능검사(크레아티닌, eGFR)를 통해 조기 관리해야 합니다.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 탭 3: 당뇨병성 신경병증 -->
+      <div class="tab-panel" id="comp-nerve">
+        <div class="comp-visual-card">
+          <svg viewBox="0 0 300 220" role="img" aria-label="고혈당으로 염증이 생긴 모세혈관과 주변 말초신경 섬유 손상 단면 모식도">
+            <rect width="300" height="220" rx="8" fill="#f4f7f9"/>
+            <path d="M18 46 Q150 32 282 46 L282 88 Q150 74 18 88 Z" fill="#b82e2e" stroke="#7a1818" stroke-width="2"/>
+            <path d="M18 54 Q150 40 282 54 L282 80 Q150 66 18 80 Z" fill="#e04848"/>
+            <ellipse cx="55" cy="64" rx="10" ry="6" fill="#991414"/>
+            <ellipse cx="135" cy="60" rx="10" ry="6" fill="#991414"/>
+            <ellipse cx="215" cy="65" rx="10" ry="6" fill="#991414"/>
+            <circle cx="85" cy="58" r="3.5" fill="#fff59d"/><circle cx="105" cy="68" r="3.5" fill="#fff59d"/>
+            <circle cx="168" cy="56" r="3.5" fill="#fff59d"/><circle cx="185" cy="66" r="3.5" fill="#fff59d"/>
+            <circle cx="248" cy="60" r="3.5" fill="#fff59d"/>
+            <text x="150" y="25" text-anchor="middle" font-size="10.5" font-weight="800" fill="#8a2c2c">고혈당·혈관 염증으로 신경 혈류 감소</text>
+            <path d="M110 86 L110 108 M190 86 L190 108" stroke="#b34242" stroke-width="2.5" stroke-dasharray="3 2"/>
+            <text x="150" y="103" text-anchor="middle" font-size="9.5" font-weight="800" fill="#b34242">산소·영양 공급 저하</text>
+
+            <rect x="24" y="116" width="252" height="58" rx="14" fill="#f2d694" stroke="#b88a35" stroke-width="2"/>
+            <rect x="38" y="126" width="44" height="14" rx="6" fill="#fff3d1" stroke="#b88a35"/>
+            <rect x="92" y="126" width="36" height="14" rx="6" fill="#e69d9d" stroke="#b34242" stroke-dasharray="3 2"/>
+            <rect x="138" y="126" width="48" height="14" rx="6" fill="#fff3d1" stroke="#b88a35"/>
+            <rect x="196" y="126" width="64" height="14" rx="6" fill="#e69d9d" stroke="#b34242" stroke-dasharray="3 2"/>
+
+            <rect x="38" y="148" width="56" height="14" rx="6" fill="#fff3d1" stroke="#b88a35"/>
+            <rect x="104" y="148" width="52" height="14" rx="6" fill="#e69d9d" stroke="#b34242" stroke-dasharray="3 2"/>
+            <rect x="166" y="148" width="94" height="14" rx="6" fill="#fff3d1" stroke="#b88a35"/>
+            <path d="M108 118 L100 134 L112 134 L104 152" stroke="#d9381e" stroke-width="2.2" fill="none"/>
+            <path d="M224 118 L216 134 L228 134 L220 152" stroke="#d9381e" stroke-width="2.2" fill="none"/>
+            <text x="150" y="196" text-anchor="middle" font-size="10.5" font-weight="800" fill="#1f483a">말초신경 수초 손상 → 통증·저림·무감각</text>
+          </svg>
+          <div class="comp-visual-caption">고혈당 미세혈관 염증과 말초신경 손상</div>
+          <div class="comp-visual-sub">신경에 혈액을 공급하는 모세혈관 손상으로 신경섬유 변성</div>
+        </div>
+        <div>
+          <h4 style="font-size:1.15rem; color:var(--primary-dark); margin-bottom:8px;">당뇨병성 신경병증</h4>
+          <ul style="padding-left:20px; font-size:0.95rem; display:flex; flex-direction:column; gap:6px;">
+            <li><strong>말초신경병증:</strong> 고혈당 독소와 미세혈관 염증으로 손과 발끝의 신경섬유(수초·축삭)가 손상되어 <strong>통증, 화끈거림, 찌릿찌릿한 저림, 시림</strong>이 나타나거나 반대로 통증·온도 감각이 둔해지는 <strong>무감각</strong> 증상이 발생합니다.</li>
+            <li><strong>자율신경병증:</strong> 내장 기관을 조절하는 자율신경이 손상되어 <strong>소화기(위무력증, 변비, 설사), 비뇨기(배뇨장애), 생식기(성기능 장애), 순환기계(기립성 저혈압, 빈맥)</strong> 등에 광범위한 영향을 미칩니다.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 탭 4: 당뇨병성 족부질환 -->
+      <div class="tab-panel" id="comp-foot">
+        <div class="comp-visual-card">
+          <svg viewBox="0 0 300 220" role="img" aria-label="건강한 발바닥과 엄지발가락 및 앞발바닥에 궤양이 발생한 당뇨병성 족부질환 비교도">
+            <rect width="300" height="220" rx="8" fill="#e6f0ee"/>
+            <g transform="translate(22, 16)">
+              <ellipse cx="64" cy="24" rx="11" ry="15" fill="#f3c6a5" stroke="#c9936d" stroke-width="1.5"/>
+              <ellipse cx="47" cy="28" rx="6.5" ry="11" fill="#f3c6a5" stroke="#c9936d" stroke-width="1.5"/>
+              <ellipse cx="34" cy="33" rx="6" ry="10" fill="#f3c6a5" stroke="#c9936d" stroke-width="1.5"/>
+              <ellipse cx="22" cy="40" rx="5.5" ry="9" fill="#f3c6a5" stroke="#c9936d" stroke-width="1.5"/>
+              <ellipse cx="11" cy="49" rx="5" ry="8" fill="#f3c6a5" stroke="#c9936d" stroke-width="1.5"/>
+              <path d="M10 58 C6 82, 18 112, 20 134 C22 156, 36 168, 52 166 C68 164, 74 148, 72 126 C70 104, 80 76, 76 52 C72 40, 14 44, 10 58 Z" fill="#f3c6a5" stroke="#c9936d" stroke-width="1.5"/>
+              <text x="44" y="188" text-anchor="middle" font-size="11" font-weight="800" fill="#1f483a">건강한 발</text>
+            </g>
+
+            <g transform="translate(168, 16)">
+              <ellipse cx="32" cy="24" rx="11" ry="15" fill="#f3c6a5" stroke="#c9936d" stroke-width="1.5"/>
+              <ellipse cx="49" cy="28" rx="6.5" ry="11" fill="#f3c6a5" stroke="#c9936d" stroke-width="1.5"/>
+              <ellipse cx="62" cy="33" rx="6" ry="10" fill="#f3c6a5" stroke="#c9936d" stroke-width="1.5"/>
+              <ellipse cx="74" cy="40" rx="5.5" ry="9" fill="#f3c6a5" stroke="#c9936d" stroke-width="1.5"/>
+              <ellipse cx="85" cy="49" rx="5" ry="8" fill="#f3c6a5" stroke="#c9936d" stroke-width="1.5"/>
+              <path d="M86 58 C90 82, 78 112, 76 134 C74 156, 60 168, 44 166 C28 164, 22 148, 24 126 C26 104, 16 76, 20 52 C24 40, 82 44, 86 58 Z" fill="#f3c6a5" stroke="#c9936d" stroke-width="1.5"/>
+              <ellipse cx="32" cy="24" rx="6.5" ry="9" fill="#f5a89a"/>
+              <ellipse cx="32" cy="24" rx="3.2" ry="5.5" fill="#9e1414"/>
+              <ellipse cx="52" cy="68" rx="15" ry="10" fill="#f5a89a"/>
+              <ellipse cx="52" cy="68" rx="8.5" ry="5" fill="#9e1414"/>
+              <line x1="2" y1="24" x2="26" y2="24" stroke="#222625" stroke-width="1.2"/>
+              <text x="-2" y="27" text-anchor="end" font-size="9.5" font-weight="800" fill="#9e1414">궤양</text>
+              <text x="52" y="188" text-anchor="middle" font-size="11" font-weight="800" fill="#b34242">당뇨병성 족부 질환</text>
+            </g>
+          </svg>
+          <div class="comp-visual-caption">건강한 발 vs 당뇨병성 족부 궤양 비교</div>
+          <div class="comp-visual-sub">압력이 집중되는 엄지발가락·앞발바닥 궤양 발생 부위</div>
+        </div>
+        <div>
+          <h4 style="font-size:1.15rem; color:var(--primary-dark); margin-bottom:8px;">당뇨병성 족부질환</h4>
+          <ul style="padding-left:20px; font-size:0.95rem; display:flex; flex-direction:column; gap:6px;">
+            <li><strong>족부궤양 및 상처·감염:</strong> 말초신경병증으로 통증을 느끼지 못해 압력이 쏠리는 <strong>엄지발가락과 앞발바닥</strong>에 굳은살·물집이 생기고, 혈액순환 장애로 상처가 아물지 않아 깊은 <strong>족부궤양과 세균 감염</strong>으로 진행합니다.</li>
+            <li><strong>족부절단 위험:</strong> 감염과 조직 괴사가 심해지면 불가피하게 <strong>족부절단</strong>에 이를 수 있는 심각한 합병증입니다.</li>
+            <li><strong>매일 발 상태 확인 습관:</strong> 매일 밝은 곳에서 발바닥·발가락 사이 상처, 물집, 굳은살, 색 변화를 확인하고, 맨발 보행을 피하며 발에 잘 맞는 편한 신발을 착용해야 합니다.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 탭 5: 심뇌혈관 질환 -->
+      <div class="tab-panel" id="comp-heart">
+        <div class="comp-visual-card">
+          <svg viewBox="0 0 300 220" role="img" aria-label="고혈당과 이상지질혈증으로 콜레스테롤 플라크가 쌓여 좁아진 동맥 혈관 단면도">
+            <rect width="300" height="220" rx="8" fill="#f8f6f4"/>
+            <path d="M14 55 Q150 35 286 55 L286 165 Q150 185 14 165 Z" fill="#a82424" stroke="#6e1414" stroke-width="2"/>
+            <path d="M14 68 Q150 48 286 68 L286 152 Q150 172 14 152 Z" fill="#d93838"/>
+            <path d="M85 60 Q155 104 225 62 Q155 52 85 60 Z" fill="#f5d142" stroke="#c99a18" stroke-width="1.5"/>
+            <path d="M80 158 Q155 114 230 156 Q155 168 80 158 Z" fill="#f5d142" stroke="#c99a18" stroke-width="1.5"/>
+            <ellipse cx="42" cy="95" rx="11" ry="6.5" fill="#8f1111"/>
+            <ellipse cx="52" cy="126" rx="11" ry="6.5" fill="#8f1111"/>
+            <ellipse cx="115" cy="108" rx="10" ry="5.5" fill="#8f1111"/>
+            <ellipse cx="155" cy="109" rx="10" ry="5.5" fill="#8f1111"/>
+            <ellipse cx="195" cy="108" rx="10" ry="5.5" fill="#8f1111"/>
+            <ellipse cx="255" cy="96" rx="11" ry="6.5" fill="#8f1111"/>
+            <ellipse cx="248" cy="128" rx="11" ry="6.5" fill="#8f1111"/>
+            <circle cx="75" cy="108" r="3.5" fill="#ffffff"/>
+            <circle cx="135" cy="109" r="3.5" fill="#ffffff"/>
+            <circle cx="176" cy="108" r="3.5" fill="#ffffff"/>
+            <circle cx="225" cy="112" r="3.5" fill="#ffffff"/>
+            <path d="M155 44 L155 76 M149 70 L155 77 L161 70" stroke="#ffffff" stroke-width="2.2" fill="none"/>
+            <path d="M155 176 L155 144 M149 150 L155 143 L161 150" stroke="#ffffff" stroke-width="2.2" fill="none"/>
+            <text x="150" y="25" text-anchor="middle" font-size="11" font-weight="800" fill="#8a2c2c">콜레스테롤 플라크 축적 → 혈관 협착</text>
+            <text x="150" y="204" text-anchor="middle" font-size="10.5" font-weight="800" fill="#1f483a">혈류 차단 시 심근경색·뇌졸중 유발</text>
+          </svg>
+          <div class="comp-visual-caption">동맥경화반(플라크)에 의한 혈관 협착 단면</div>
+          <div class="comp-visual-sub">고혈당·이상지질혈증으로 동맥 내벽이 좁아지고 막히는 과정</div>
+        </div>
+        <div>
+          <h4 style="font-size:1.15rem; color:var(--primary-dark); margin-bottom:8px;">심뇌혈관 질환</h4>
+          <ul style="padding-left:20px; font-size:0.95rem; display:flex; flex-direction:column; gap:6px;">
+            <li><strong>뇌졸중:</strong> 뇌혈관이 동맥경화반이나 혈전으로 막혀 뇌 조직이 손상되는 <strong>허혈성 뇌졸중(뇌경색)</strong>과 뇌혈관이 터져 발생하는 <strong>출혈성 뇌졸중(뇌출혈)</strong>이 있으며, 당뇨병 환자는 일반인보다 발생 위험이 높습니다.</li>
+            <li><strong>심장질환 및 허혈성 심질환:</strong> 심장 근육에 혈액을 공급하는 관상동맥이 좁아지거나 막혀 발생하는 <strong>협심증, 심근경색</strong> 등이 대표적입니다. 신경병증이 동반된 경우 가슴 통증이 뚜렷하지 않은 '무증상 심근허혈'로 나타날 수 있어 각별한 주의가 필요합니다.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 메뉴 5. 혈당 관리 및 건강 목표 -->
+    <section class="content-section" id="menu5">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-badge">메뉴 05</span>
+          <h2 class="section-title">혈당 관리 및 건강 목표</h2>
+        </div>
+        <span style="font-size:0.9rem; color:var(--primary-dark); font-weight:700;">일반적 성인 당뇨병 교육 목표</span>
+      </div>
+
+      <div class="grid-4">
+        <div class="info-card" style="border-top:5px solid var(--primary);">
+          <h3>🩸 혈당 조절 목표</h3>
+          <ul class="goal-card-list">
+            <li class="goal-row"><span class="goal-row-label">당화혈색소:</span> <span class="goal-pill">6.5% 미만</span></li>
+            <li class="goal-row"><span class="goal-row-label">공복혈당:</span> <span class="goal-pill">80 ~ 130 mg/dL</span></li>
+            <li class="goal-row"><span class="goal-row-label">식후 2시간 혈당:</span> <span class="goal-pill">180 mg/dL 미만</span></li>
+          </ul>
+        </div>
+
+        <div class="info-card" style="border-top:5px solid var(--secondary);">
+          <h3>🧪 이상지질혈증 목표</h3>
+          <ul class="goal-card-list">
+            <li class="goal-row"><span class="goal-row-label">LDL 콜레스테롤:</span> <span class="goal-pill">100 mg/dL 미만</span></li>
+            <li class="goal-row"><span class="goal-row-label">HDL 콜레스테롤:</span> <span class="goal-pill">남 40 / 여 50 이상</span></li>
+            <li class="goal-row"><span class="goal-row-label">중성지방:</span> <span class="goal-pill">150 mg/dL 미만</span></li>
+          </ul>
+        </div>
+
+        <div class="info-card" style="border-top:5px solid var(--accent);">
+          <h3>💓 혈압 관리 목표</h3>
+          <ul class="goal-card-list">
+            <li class="goal-row"><span class="goal-row-label">목표 혈압:</span> <span class="goal-pill-amber">130 / 80 mmHg 미만</span></li>
+          </ul>
+          <p class="goal-sub-note">수축기 혈압 130 미만, 이완기 혈압 80 미만 유지를 목표로 합니다.</p>
+        </div>
+
+        <div class="info-card" style="border-top:5px solid #596985;">
+          <h3>📏 체중·허리둘레 목표</h3>
+          <ul class="goal-card-list">
+            <li class="goal-row"><span class="goal-row-label">체질량지수(BMI):</span> <span class="goal-pill">18.5 ~ 22.9</span></li>
+            <li class="goal-row"><span class="goal-row-label">남자 허리둘레:</span> <span class="goal-pill">90 cm 미만</span></li>
+            <li class="goal-row"><span class="goal-row-label">여자 허리둘레:</span> <span class="goal-pill">85 cm 미만</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 내 검사 수치 실시간 비교기 -->
+      <div class="compare-box">
+        <h3 style="color:#2b4c61; font-size:1.15rem;">🔍 내 검사 결과와 목표 수치 바로 비교하기</h3>
+        <p style="font-size:0.92rem; color:var(--text-sub);">최근 건강검진이나 자가측정 수치를 입력하면 목표 범위와 즉시 비교해 드립니다.</p>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="cmp-hba1c">당화혈색소 (%)</label>
+            <input type="number" id="cmp-hba1c" step="0.1" placeholder="예: 6.3" oninput="compareLabValues()">
+          </div>
+          <div class="form-group">
+            <label for="cmp-fbg">공복혈당 (mg/dL)</label>
+            <input type="number" id="cmp-fbg" placeholder="예: 115" oninput="compareLabValues()">
+          </div>
+          <div class="form-group">
+            <label for="cmp-ppg">식후 2시간 혈당 (mg/dL)</label>
+            <input type="number" id="cmp-ppg" placeholder="예: 165" oninput="compareLabValues()">
+          </div>
+          <div class="form-group">
+            <label for="cmp-ldl">LDL 콜레스테롤 (mg/dL)</label>
+            <input type="number" id="cmp-ldl" placeholder="예: 95" oninput="compareLabValues()">
+          </div>
+          <div class="form-group">
+            <label for="cmp-sbp">수축기 혈압 (mmHg)</label>
+            <input type="number" id="cmp-sbp" placeholder="예: 125" oninput="compareLabValues()">
+          </div>
+        </div>
+        <div id="compareResultBox" style="margin-top:16px; background:#ffffff; padding:16px; border-radius:10px; border:1px solid #c2dcf0; font-size:0.95rem;">
+          위 입력칸에 수치를 입력하시면 목표 기준 달성 여부가 실시간으로 표시됩니다.
+        </div>
+      </div>
+
+      <p style="margin-top:14px; font-size:0.9rem; color:var(--text-sub);">
+        ※ 위 수치들은 일반적인 성인 당뇨병 환자를 위한 <strong>교육용 참고 목표</strong>입니다. 고령, 심혈관질환 동반, 저혈당 위험, 신장 기능 등에 따라 <strong>개인별 치료 목표는 달라질 수 있으므로 반드시 담당 의료진과 상담</strong>하시기 바랍니다. (예: 대한당뇨병학회 진료지침상 저위험군 심혈관질환 미동반 시 일반 혈압 목표 140/90mmHg 미만 또는 130/80mmHg 미만으로 개별화하여 적용합니다.)
+      </p>
+    </section>
+
+    <!-- 메뉴 6. 혈당 스파이크 이해하기 -->
+    <section class="content-section" id="menu6">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-badge">메뉴 06</span>
+          <h2 class="section-title">혈당 스파이크 이해하기</h2>
+        </div>
+        <span style="font-size:0.9rem; color:var(--accent); font-weight:700;">식후 급격한 혈당 변동 예방</span>
+      </div>
+
+      <div class="highlight-banner" style="background:var(--bg-soft-amber); border-color:#e5d3b0;">
+        <h3 style="color:#854f19;">📈 혈당 스파이크(Blood Sugar Spike)란?</h3>
+        <p>식사 후 혈액 속 포도당 농도가 <strong>짧은 시간에 급격하게 치솟았다가 다시 빠르게 떨어지는 현상</strong>을 말합니다. 공복혈당이 정상이라도 식후 혈당 스파이크가 반복되면 혈관 내피세포에 산화 스트레스를 주어 동맥경화와 당뇨병 진행을 앞당깁니다.</p>
+      </div>
+
+      <div class="chart-card">
+        <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:10px; margin-bottom:12px;">
+          <h3 style="font-size:1.12rem; color:var(--primary-dark);">📊 식사 후 혈당 변화 그래프 (교육용 비교 예시)</h3>
+          <div class="chart-controls">
+            <button type="button" class="chart-toggle-btn active" onclick="toggleSpikeLine('both', this)">전체 비교 보기</button>
+            <button type="button" class="chart-toggle-btn" onclick="toggleSpikeLine('spike', this)">혈당 스파이크만</button>
+            <button type="button" class="chart-toggle-btn" onclick="toggleSpikeLine('normal', this)">완만한 정상 곡선만</button>
+          </div>
+        </div>
+
+        <svg viewBox="0 0 760 310" width="100%" height="auto" role="img" aria-label="식후 혈당 스파이크와 완만한 식후 혈당 변화 비교 그래프">
+          <rect x="70" y="25" width="650" height="230" fill="#fafbfb" stroke="#d5dcd9"/>
+          <line x1="70" y1="70" x2="720" y2="70" stroke="#e4eae7" stroke-dasharray="4 4"/>
+          <line x1="70" y1="115" x2="720" y2="115" stroke="#e4eae7" stroke-dasharray="4 4"/>
+          <line x1="70" y1="160" x2="720" y2="160" stroke="#e4eae7" stroke-dasharray="4 4"/>
+          <line x1="70" y1="205" x2="720" y2="205" stroke="#e4eae7" stroke-dasharray="4 4"/>
+          <text x="60" y="32" text-anchor="end" font-size="12" fill="#505755">240</text>
+          <text x="60" y="75" text-anchor="end" font-size="12" fill="#505755">200</text>
+          <text x="60" y="120" text-anchor="end" font-size="12" fill="#505755">160</text>
+          <text x="60" y="165" text-anchor="end" font-size="12" fill="#505755">120</text>
+          <text x="60" y="210" text-anchor="end" font-size="12" fill="#505755">80</text>
+          <text x="22" y="140" text-anchor="middle" font-size="12" font-weight="700" fill="#222625" transform="rotate(-90 22 140)">혈당 (mg/dL)</text>
+
+          <line x1="70" y1="92.5" x2="720" y2="92.5" stroke="#b56c26" stroke-width="1.5" stroke-dasharray="6 4"/>
+          <text x="712" y="86" text-anchor="end" font-size="11.5" font-weight="700" fill="#9c591b">식후 2시간 목표 기준 (180 mg/dL 미만)</text>
+
+          <text x="90" y="276" text-anchor="middle" font-size="12" font-weight="700" fill="#222625">식전(0분)</text>
+          <text x="220" y="276" text-anchor="middle" font-size="12" font-weight="700" fill="#222625">식후 30분</text>
+          <text x="350" y="276" text-anchor="middle" font-size="12" font-weight="700" fill="#222625">식후 1시간</text>
+          <text x="480" y="276" text-anchor="middle" font-size="12" font-weight="700" fill="#222625">식후 2시간</text>
+          <text x="610" y="276" text-anchor="middle" font-size="12" font-weight="700" fill="#222625">식후 3시간</text>
+
+          <g id="lineSpikeGroup">
+            <path d="M90 188 Q160 110 220 45 Q285 32 350 95 Q420 175 480 198 Q550 205 610 190" fill="none" stroke="#b34242" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="220" cy="45" r="6" fill="#b34242"/>
+            <rect x="232" y="30" width="168" height="26" rx="6" fill="#f6ecec" stroke="#dfb6b6"/>
+            <text x="316" y="47" text-anchor="middle" font-size="11.5" font-weight="800" fill="#b34242">급격한 혈당 상승 (220+)</text>
+          </g>
+
+          <g id="lineNormalGroup">
+            <path d="M90 188 Q160 155 220 135 Q290 122 350 132 Q420 150 480 166 Q550 178 610 185" fill="none" stroke="#2f6653" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="285" cy="126" r="6" fill="#2f6653"/>
+            <rect x="240" y="138" width="185" height="26" rx="6" fill="#e7eeea" stroke="#b5c7bf"/>
+            <text x="332" y="155" text-anchor="middle" font-size="11.5" font-weight="800" fill="#1f483a">완만한 혈당 변화 (채소 먼저+걷기)</text>
+          </g>
+        </svg>
+        <p style="font-size:0.86rem; color:var(--text-sub); margin-top:6px;">※ 위 그래프는 식습관과 활동에 따른 식후 혈당 변화 차이를 이해하기 쉽게 나타낸 교육용 예시입니다.</p>
+      </div>
+
+      <div class="grid-2" style="margin-bottom:22px;">
+        <div class="info-card">
+          <h3>⚡ 혈당 스파이크의 주요 원인</h3>
+          <ul style="padding-left:20px; font-size:0.95rem; margin-top:8px; display:flex; flex-direction:column; gap:5px;">
+            <li>흰쌀밥, 빵, 면 등 정제 탄수화물·당류가 많이 포함된 식사</li>
+            <li>설탕·액상과당이 많은 음료, 과자 등 단순당 간식</li>
+            <li>식사 후 바로 눕거나 앉아 있는 운동 및 신체활동 부족</li>
+            <li>흡연 (인슐린 저항성 악화 및 혈관 수축)</li>
+            <li>만성 스트레스 및 수면장애 (코르티솔 등 스트레스 호르몬 분비)</li>
+            <li>스테로이드 등 일부 약물의 영향</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <h3>🥱 혈당 스파이크의 주요 의심 신호</h3>
+          <ul style="padding-left:20px; font-size:0.95rem; margin-top:8px; display:flex; flex-direction:column; gap:5px;">
+            <li>식사 후 참을 수 없이 쏟아지는 심한 졸음(식곤증)</li>
+            <li>머리가 멍해지고 흐려지는 집중력과 판단력</li>
+            <li>이유 없는 급격한 피로감과 무기력</li>
+            <li>소변을 자주 보게 되는 빈뇨</li>
+            <li>식사한 지 얼마 되지 않아 금방 허기나 갈증을 느낌</li>
+            <li>혈당이 급락하면서 단 음식이나 간식이 자꾸 당김</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 style="font-size:1.15rem; margin-bottom:12px; color:var(--primary-dark);">🛡️ 혈당 스파이크를 막는 4가지 실천 예방법</h3>
+      <div class="grid-4">
+        <div class="info-card" style="background:#f3f7f5;">
+          <h3>1. 균형 잡힌 식습관</h3>
+          <p style="font-size:0.92rem;">단순당 음료·간식 섭취를 줄이고, 혈당을 천천히 올리는 단백질, 건강한 지방, 식이섬유가 풍부한 식품을 함께 섭취합니다.</p>
+        </div>
+        <div class="info-card" style="background:#f3f7f5;">
+          <h3>2. 거꾸로 식사</h3>
+          <p style="font-size:0.92rem;"><strong>채소(식이섬유) → 단백질(고기·생선·두부) → 탄수화물(밥·빵)</strong> 순서로 드시면 당 흡수가 지연되어 혈당 스파이크를 크게 완화합니다.</p>
+        </div>
+        <div class="info-card" style="background:#f3f7f5;">
+          <h3>3. 식후 10분 이상 걷기</h3>
+          <p style="font-size:0.92rem;">식후 30분~1시간 이내에 10분 이상 가볍게 걷거나 몸을 움직이면 근육이 혈액 속 포도당을 즉시 에너지로 소모합니다.</p>
+        </div>
+        <div class="info-card" style="background:#f3f7f5;">
+          <h3>4. 스트레스·수면 관리</h3>
+          <p style="font-size:0.92rem;">수면 부족과 스트레스는 코르티솔·아드레날린을 분비시켜 간에서 포도당 방출을 늘리므로 하루 7시간 내외 숙면을 취합니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 메뉴 7. 당뇨환자의 올바른 식사법 -->
+    <section class="content-section" id="menu7">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-badge">메뉴 07</span>
+          <h2 class="section-title">당뇨환자의 올바른 식사법</h2>
+        </div>
+        <span style="font-size:0.9rem; color:var(--primary-dark); font-weight:700;">3대 핵심 식사 원칙과 식단 구성</span>
+      </div>
+
+      <div class="grid-3" style="margin-bottom:24px;">
+        <div class="info-card" style="border-top:5px solid var(--primary);">
+          <h3>① 골고루 먹기</h3>
+          <ul style="padding-left:18px; font-size:0.94rem; margin-top:8px;">
+            <li>탄수화물, 단백질, 지방을 균형 있게 섭취</li>
+            <li>채소와 식이섬유가 풍부한 식품 충분히 활용</li>
+            <li>곡류, 어육류, 채소, 해조류 등 다양한 식품군 섭취</li>
+          </ul>
+        </div>
+        <div class="info-card" style="border-top:5px solid var(--secondary);">
+          <h3>② 알맞게 먹기</h3>
+          <ul style="padding-left:18px; font-size:0.94rem; margin-top:8px;">
+            <li>개인의 표준체중과 활동량에 맞는 적정 열량 섭취</li>
+            <li>한 번에 많이 먹는 과식과 폭식 피하기</li>
+            <li>개인 밥그릇을 사용하여 일정한 식사량 조절하기</li>
+          </ul>
+        </div>
+        <div class="info-card" style="border-top:5px solid var(--accent);">
+          <h3>③ 제때 먹기</h3>
+          <ul style="padding-left:18px; font-size:0.94rem; margin-top:8px;">
+            <li>매일 일정하고 규칙적인 시간에 식사하기</li>
+            <li>식사를 거르지 않기 (저혈당 및 다음 끼니 폭식 예방)</li>
+            <li>간식과 식사 시간 간격을 적절하게 관리하기</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid-2" style="align-items:start;">
+        <div style="background:#f4f8f6; border:1px solid var(--border); border-radius:var(--radius-md); padding:20px; text-align:center;">
+          <h3 style="font-size:1.08rem; color:var(--primary-dark); margin-bottom:4px;">🍽️ 한눈에 보는 당뇨 건강 식판 비율 (입체형)</h3>
+          <p style="font-size:0.85rem; color:var(--text-sub); margin-bottom:10px;">식판의 각 영역을 클릭하면 해당 식품군의 세부 종류가 아래 표에 나타납니다.</p>
+
+          <svg viewBox="0 0 360 226" width="100%" height="auto" role="img" aria-label="채소·나물 50%, 단백질 25%, 통곡물·잡곡 25%로 구성된 입체 당뇨 건강 식판">
+            <defs>
+              <radialGradient id="plateShadow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="rgba(20, 45, 36, 0.25)"/>
+                <stop offset="75%" stop-color="rgba(20, 45, 36, 0.08)"/>
+                <stop offset="100%" stop-color="rgba(20, 45, 36, 0)"/>
+              </radialGradient>
+              <linearGradient id="rimSideGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#9db5ab"/>
+                <stop offset="50%" stop-color="#dce6e2"/>
+                <stop offset="100%" stop-color="#8da69c"/>
+              </linearGradient>
+              <linearGradient id="vegTopGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#e3f5eb"/>
+                <stop offset="100%" stop-color="#bce4cf"/>
+              </linearGradient>
+              <linearGradient id="vegSideGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#76b596"/>
+                <stop offset="100%" stop-color="#4e8f70"/>
+              </linearGradient>
+              <linearGradient id="protTopGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#e4f1fa"/>
+                <stop offset="100%" stop-color="#bddcf2"/>
+              </linearGradient>
+              <linearGradient id="carbTopGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#fff4e0"/>
+                <stop offset="100%" stop-color="#f7dbb0"/>
+              </linearGradient>
+              <linearGradient id="carbSideGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#d49c4c"/>
+                <stop offset="100%" stop-color="#b57d31"/>
+              </linearGradient>
+            </defs>
+
+            <ellipse cx="180" cy="134" rx="146" ry="86" fill="url(#plateShadow)"/>
+            <path d="M 42 104 A 138 92 0 0 0 318 104 L 318 122 A 138 92 0 0 1 42 122 Z" fill="url(#rimSideGrad)" stroke="#7a948a" stroke-width="1.5"/>
+            <ellipse cx="180" cy="104" rx="138" ry="92" fill="#f7faf9" stroke="#9db5ab" stroke-width="2"/>
+            <ellipse cx="180" cy="104" rx="128" ry="84" fill="#e6eeeb" stroke="#b9ccc4" stroke-width="1.2"/>
+
+            <g class="plate-slice active-slice" id="slice-veg" onclick="selectPlateCategory('veg')">
+              <path d="M 56 102 A 124 80 0 0 0 180 182 L 180 194 A 124 80 0 0 1 56 114 Z" fill="url(#vegSideGrad)" stroke="#2f6653" stroke-width="1.2"/>
+              <path d="M 180 22 A 124 80 0 0 0 180 182 Z" fill="url(#vegTopGrad)" stroke="#2f6653" stroke-width="2"/>
+              <text x="122" y="96" text-anchor="middle" font-size="13.5" font-weight="900" fill="#134e3a">채소·나물</text>
+              <text x="122" y="115" text-anchor="middle" font-size="12.5" font-weight="800" fill="#2f6653">50% (듬뿍)</text>
+              <text x="122" y="132" text-anchor="middle" font-size="10" font-weight="700" fill="#3a6e59">클릭하여 종류 보기</text>
+            </g>
+
+            <g class="plate-slice" id="slice-protein" onclick="selectPlateCategory('protein')">
+              <path d="M 180 102 L 304 102 L 304 113 L 180 113 Z" fill="#6da1c7" stroke="#2f6653" stroke-width="1"/>
+              <path d="M 180 22 A 124 80 0 0 1 304 102 L 180 102 Z" fill="url(#protTopGrad)" stroke="#2f6653" stroke-width="2"/>
+              <text x="234" y="63" text-anchor="middle" font-size="13" font-weight="900" fill="#194a70">단백질</text>
+              <text x="234" y="80" text-anchor="middle" font-size="12.5" font-weight="800" fill="#2b7bb9">25% (적정)</text>
+              <text x="234" y="94" text-anchor="middle" font-size="9.5" font-weight="700" fill="#285d85">생선·두부·살코기</text>
+            </g>
+
+            <g class="plate-slice" id="slice-carb" onclick="selectPlateCategory('carb')">
+              <path d="M 304 102 A 124 80 0 0 1 180 182 L 180 194 A 124 80 0 0 0 304 114 Z" fill="url(#carbSideGrad)" stroke="#2f6653" stroke-width="1.2"/>
+              <path d="M 304 102 A 124 80 0 0 1 180 182 L 180 102 Z" fill="url(#carbTopGrad)" stroke="#2f6653" stroke-width="2"/>
+              <text x="225" y="128" text-anchor="middle" font-size="12.5" font-weight="900" fill="#854b0c">통곡물·잡곡</text>
+              <text x="225" y="144" text-anchor="middle" font-size="12" font-weight="800" fill="#b56c26">25% (적정량)</text>
+              <text x="225" y="158" text-anchor="middle" font-size="9.5" font-weight="700" fill="#8f5519">클릭하여 종류 보기</text>
+            </g>
+          </svg>
+
+          <!-- 클릭 시 연동되는 식품 종류 상세 표 -->
+          <div id="plateDetailBox" style="text-align:left; background:#ffffff; border:1.5px solid #b8d1c7; border-radius:10px; padding:14px;">
+            <div style="font-weight:800; color:var(--primary-dark); font-size:0.98rem; margin-bottom:8px;">🥬 채소·나물군 (식판의 50% · 매끼 2~3접시)</div>
+            <table class="health-table" style="min-width:100%; font-size:0.88rem;">
+              <thead>
+                <tr>
+                  <th style="width:110px; padding:9px 12px;">세부 구분</th>
+                  <th style="padding:9px 12px;">해당 식품 종류 및 1회 권장 분량</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding:9px 12px;"><strong>잎·줄기 채소</strong></td>
+                  <td style="padding:9px 12px;">시금치, 상추, 깻잎, 배추, 양배추, 브로콜리, 청경채, 샐러리 (생채소 1접시 약 70g)</td>
+                </tr>
+                <tr>
+                  <td style="padding:9px 12px;"><strong>나물류</strong></td>
+                  <td style="padding:9px 12px;">콩나물무침, 숙주나물, 취나물, 시금치나물, 고사리나물, 애호박볶음 (익힌 나물 1접시 약 70g)</td>
+                </tr>
+                <tr>
+                  <td style="padding:9px 12px;"><strong>열매·버섯·해조류</strong></td>
+                  <td style="padding:9px 12px;">오이, 방울토마토, 파프리카, 가지, 표고·느타리버섯, 미역, 다시마, 김</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:14px;">
+          <div>
+            <h3 style="font-size:1.12rem; color:#123e2e; margin-bottom:10px;">🥗 당뇨환자 하루 균형 식단 예시 (1회 분량 표기)</h3>
+            <div class="table-wrap" style="margin:0;">
+              <table class="health-table" style="min-width:100%; font-size:0.91rem;">
+                <thead>
+                  <tr>
+                    <th style="width:74px; padding:11px 12px;">구분</th>
+                    <th style="padding:11px 12px;">추천 식단 구성 예시 (적정 섭취량 기준)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="padding:11px 12px;"><strong>아침</strong></td>
+                    <td style="padding:11px 12px;">잡곡밥(210g, 약 2/3공기), 계란찜(2조각, 약 100g) 또는 삶은 계란(1~2개), 시금치나물(70g), 두부조림(2쪽, 80g), 배추김치(40g)</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:11px 12px;"><strong>점심</strong></td>
+                    <td style="padding:11px 12px;">잡곡밥(210g), 고등어구이(1토막, 70g) 또는 닭가슴살·살코기(60g), 콩나물무침(70g), 브로콜리숙회(70g), 미역국(건더기 위주 1대접)</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:11px 12px;"><strong>저녁</strong></td>
+                    <td style="padding:11px 12px;">잡곡밥(180~210g), 소고기불고기·살코기(60g) 또는 생선조림(1토막, 70g), 쌈채소(상추·깻잎 70g), 버섯볶음(70g)</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:11px 12px;"><strong>간식</strong></td>
+                    <td style="padding:11px 12px;">무가당 플레인 요거트(1컵, 100g), 아몬드·호두 등 견과류(하루 한 줌 이내, 15~20g), 방울토마토(10알, 150g)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- 식단 구성 핵심 가이드 & 피해야 할 식품 -->
+          <div style="background:#f5f8f6; border:1px solid var(--border); border-radius:var(--radius-md); padding:15px 16px;">
+            <h4 style="font-size:0.98rem; font-weight:800; color:var(--primary-dark); margin-bottom:8px;">📌 식단 구성 및 조리 시 핵심 체크포인트</h4>
+            <ul style="padding-left:18px; font-size:0.88rem; color:var(--text-main); display:flex; flex-direction:column; gap:5px;">
+              <li><strong>밥그릇 크기 줄이기:</strong> 평소 쓰는 밥공기 대신 작은 공기를 사용하면 자연스럽게 탄수화물 양(180~210g)을 일정하게 맞출 수 있습니다.</li>
+              <li><strong>국물보다는 건더기 위주:</strong> 국·찌개 국물에는 나트륨과 당분이 많으므로 건더기만 건져 드시고, 국그릇 크기를 줄이세요.</li>
+              <li><strong>조리법 선택:</strong> 튀김·볶음보다 <strong>찜, 구이, 삶기, 무침</strong> 조리법을 활용해 불필요한 기름과 설탕·물엿 양념을 최소화합니다.</li>
+              <li><strong>피해야 할 고당분 식품:</strong> 설탕 음료, 과일주스, 믹스커피, 케이크·과자, 떡·흰빵 등 정제 단순당 식품은 혈당을 급격히 올리므로 삼갑니다.</li>
+            </ul>
+          </div>
+
+          <p style="font-size:0.85rem; color:var(--text-sub); line-height:1.5;">※ 위 중량(예: 잡곡밥 210g)은 성인 표준 하루 1,800~2,000kcal 기준 예시이며, 개인의 체중, 활동량, 복용 중인 당뇨 약물(인슐린·설폰요소제 등) 및 신장 기능에 따라 전문 영양사 및 의료진과 상의하여 조절해야 합니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 메뉴 8. 표준체중 및 하루 필요 열량 계산 -->
+    <section class="content-section" id="menu8">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-badge">메뉴 08</span>
+          <h2 class="section-title">표준체중 및 하루 필요 열량 계산</h2>
+        </div>
+        <span style="font-size:0.9rem; color:var(--primary-dark); font-weight:700;">입력 즉시 자동 계산</span>
+      </div>
+
+      <div class="calc-wrapper">
+        <!-- 입력 폼 -->
+        <div class="calc-input-panel">
+          <h3 style="font-size:1.12rem; color:var(--primary-dark); margin-bottom:14px;">📝 신체 정보 및 활동 수준 입력</h3>
+          <div style="display:flex; flex-direction:column; gap:14px;">
+            <div class="form-group">
+              <label for="calc-gender">성별 선택</label>
+              <select id="calc-gender" onchange="calculateHealthMetrics()">
+                <option value="male">남자 (계수 22 적용)</option>
+                <option value="female">여자 (계수 21 적용)</option>
+              </select>
+            </div>
+            <div class="grid-2" style="gap:12px;">
+              <div class="form-group">
+                <label for="calc-height">키 (cm)</label>
+                <input type="number" id="calc-height" value="168" min="100" max="230" step="0.1" oninput="calculateHealthMetrics()">
+              </div>
+              <div class="form-group">
+                <label for="calc-weight">현재 체중 (kg)</label>
+                <input type="number" id="calc-weight" value="68" min="25" max="250" step="0.1" oninput="calculateHealthMetrics()">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="calc-age">연령 (세)</label>
+              <input type="number" id="calc-age" value="55" min="10" max="120" oninput="calculateHealthMetrics()">
+            </div>
+            <div class="form-group">
+              <label for="calc-activity">활동 수준 선택</label>
+              <select id="calc-activity" onchange="calculateHealthMetrics()">
+                <option value="light">비만 또는 가벼운 활동 (사무직, 주로 앉아서 생활 · 25~30 kcal/kg)</option>
+                <option value="moderate" selected>정상 또는 보통 활동 (규칙적 보행, 가사, 가벼운 운동 · 30~35 kcal/kg)</option>
+                <option value="heavy">저체중 또는 심한 활동 (육체노동, 격렬한 운동 · 35~40 kcal/kg)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- 결과 출력 -->
+        <div class="calc-result-panel">
+          <h3 style="font-size:1.15rem; color:var(--primary-dark);">📊 나의 표준체중 · BMI · 하루 필요 열량 결과</h3>
+          <div class="result-metrics">
+            <div class="metric-box">
+              <div class="metric-label">표준체중 (Ideal Body Weight)</div>
+              <div class="metric-value" id="res-std-weight">62.1 kg</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-label">현재 체질량지수 (BMI)</div>
+              <div class="metric-value" id="res-bmi">24.1 kg/㎡</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-label">체중 판정 결과</div>
+              <div class="metric-value" id="res-bmi-status" style="color:var(--accent);">과체중</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-label">표준체중과 현재 체중 차이</div>
+              <div class="metric-value" id="res-weight-diff">+5.9 kg</div>
+            </div>
+          </div>
+
+          <div class="metric-box" style="border:2px solid var(--primary); margin-bottom:14px;">
+            <div class="metric-label">하루 필요 열량 추정치 (표준체중 × 활동계수)</div>
+            <div class="metric-value" id="res-calories" style="font-size:1.6rem; color:var(--primary);">1,863 ~ 2,174 kcal / 일</div>
+            <div id="res-cal-formula" style="font-size:0.84rem; color:var(--text-sub); margin-top:4px;">적용 공식: 표준체중 62.1kg × 활동계수 30~35 kcal/kg</div>
+          </div>
+
+          <div id="res-advice-msg" style="background:#fafbfb; padding:14px 16px; border-radius:10px; border-left:5px solid var(--primary); font-size:0.95rem;">
+            현재 체중이 표준체중보다 5.9kg 높습니다. 무리한 단식보다는 하루 300~500kcal 정도 열량을 줄이고 식후 걷기를 병행하여 서서히 감량하는 것이 혈당 관리에 유리합니다.
+          </div>
+        </div>
+      </div>
+
+      <!-- 산출 공식 및 BMI 기준 표 -->
+      <div class="grid-2" style="margin-top:22px;">
+        <div class="info-card" style="display:flex; flex-direction:column; justify-content:space-between;">
+          <h3>📐 의학적 표준 산출 공식 안내</h3>
+          <ul style="padding-left:18px; font-size:0.94rem; margin-top:12px; line-height:1.85; display:flex; flex-direction:column; gap:14px; flex:1; justify-content:center;">
+            <li><strong>1단계 표준체중(kg):</strong> 남자 = 키(m) × 키(m) × 22 / 여자 = 키(m) × 키(m) × 21</li>
+            <li><strong>2단계 BMI(kg/㎡):</strong> 현재 체중(kg) ÷ [키(m) × 키(m)]</li>
+            <li><strong>3단계 하루 필요 열량(kcal):</strong> 표준체중(kg) × 활동수준별 열량계수<br>
+              <span style="display:inline-block; margin-top:4px; line-height:1.75;">
+                · 비만 또는 가벼운 활동: <strong>25 ~ 30 kcal/kg</strong><br>
+                · 정상 또는 보통 활동: <strong>30 ~ 35 kcal/kg</strong><br>
+                · 저체중 또는 심한 활동: <strong>35 ~ 40 kcal/kg</strong>
+              </span>
+            </li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <h3>📋 아시아·태평양 및 대한비만학회 BMI 판정 기준</h3>
+          <div class="table-wrap" style="margin:8px 0 0;">
+            <table class="health-table" style="min-width:100%;">
+              <thead>
+                <tr>
+                  <th>체질량지수 (BMI)</th>
+                  <th>판정 구분</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>18.5 미만</strong></td><td><span class="badge-prediabetes">저체중</span></td></tr>
+                <tr><td><strong>18.5 ~ 22.9</strong></td><td><span class="badge-normal">정상체중</span></td></tr>
+                <tr><td><strong>23.0 ~ 24.9</strong></td><td><span class="badge-prediabetes">과체중</span></td></tr>
+                <tr><td><strong>25.0 이상</strong></td><td><span class="badge-diabetes">비만</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 메뉴 9. 운동과 생활습관 관리 -->
+    <section class="content-section" id="menu9">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-badge">메뉴 09</span>
+          <h2 class="section-title">운동과 생활습관 관리</h2>
+        </div>
+        <span style="font-size:0.9rem; color:var(--primary-dark); font-weight:700;">일상 속 10대 핵심 건강 실천</span>
+      </div>
+
+      <!-- 운동 일러스트 배너 -->
+      <div style="background:#edf2ef; border:1px solid var(--border); border-radius:var(--radius-md); padding:22px 26px; margin-bottom:22px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:20px;">
+        <div style="flex:1; min-width:260px;">
+          <h3 style="color:var(--primary-dark); font-size:1.18rem; margin-bottom:6px; display:flex; align-items:center; gap:8px;"><span style="font-size:1.65rem; line-height:1;">🏃‍♂️</span><span>유산소 운동 + 근력 운동의 황금 조합</span></h3>
+          <p style="font-size:0.95rem; line-height:1.6;">유산소 운동은 혈액 속 포도당을 직접 태우고, 근력 운동은 포도당을 저장하는 '근육 창고'를 넓혀 인슐린 감수성을 높여줍니다. 이틀 연속 운동을 쉬지 않는 것이 중요합니다.</p>
+        </div>
+        <svg viewBox="0 0 310 130" width="305" height="128" aria-label="유산소 걷기와 근력 운동 아이콘">
+          <rect x="4" y="4" width="144" height="122" rx="14" fill="#fafbfb" stroke="#b5c7bf" stroke-width="1.5"/>
+          <text x="76" y="54" text-anchor="middle" font-size="42">🚶‍♀️</text>
+          <text x="76" y="86" text-anchor="middle" font-size="14.5" font-weight="800" fill="#1f483a">유산소 운동</text>
+          <text x="76" y="108" text-anchor="middle" font-size="12.5" font-weight="600" fill="#505755">주 150분 이상</text>
+          <rect x="162" y="4" width="144" height="122" rx="14" fill="#fafbfb" stroke="#b9cbd6" stroke-width="1.5"/>
+          <text x="234" y="54" text-anchor="middle" font-size="42">💪</text>
+          <text x="234" y="86" text-anchor="middle" font-size="14.5" font-weight="800" fill="#2b4c61">근력 운동</text>
+          <text x="234" y="108" text-anchor="middle" font-size="12.5" font-weight="600" fill="#505755">주 2~3회 병행</text>
+        </svg>
+      </div>
+
+      <div class="grid-2" style="margin-bottom:24px;">
+        <div class="info-card">
+          <h3>1. 식후 걷기</h3>
+          <p style="font-size:0.92rem;">식사 후 30분~1시간 사이에 10~20분 이상 가볍게 산책하여 식후 혈당 급상승을 예방합니다.</p>
+        </div>
+        <div class="info-card">
+          <h3>2. 규칙적인 유산소 운동</h3>
+          <p style="font-size:0.92rem;">빠르게 걷기, 자전거 타기, 수영 등을 중강도로 주당 최소 150분 이상, 주 3일 이상 실시합니다.</p>
+        </div>
+        <div class="info-card">
+          <h3>3. 근력 운동</h3>
+          <p style="font-size:0.92rem;">스쿼트, 뒤꿈치 들기, 아령·탄력밴드 운동 등 대근육 운동을 주 2~3회 병행하여 기초대사량을 높입니다.</p>
+        </div>
+        <div class="info-card">
+          <h3>4. 충분한 수면</h3>
+          <p style="font-size:0.92rem;">매일 일정한 시간에 취침·기상하며 7시간 내외의 질 좋은 수면을 유지해 혈당 상승 호르몬을 안정시킵니다.</p>
+        </div>
+        <div class="info-card">
+          <h3>5. 스트레스 관리</h3>
+          <p style="font-size:0.92rem;">명상, 심호흡, 취미생활 등으로 정신적 긴장을 풀어 스트레스성 고혈당을 예방합니다.</p>
+        </div>
+        <div class="info-card">
+          <h3>6. 금연</h3>
+          <p style="font-size:0.92rem;">흡연은 혈관을 수축시키고 당뇨병 합병증(심근경색, 뇌졸중, 당뇨발) 위험을 극대화하므로 반드시 금연합니다.</p>
+        </div>
+        <div class="info-card">
+          <h3>7. 절주</h3>
+          <p style="font-size:0.92rem;">음주는 고열량일 뿐 아니라 약물 복용 환자에게 지연성 저혈당을 유발할 수 있으므로 가급적 금주·절주합니다.</p>
+        </div>
+        <div class="info-card">
+          <h3>8. 정기적인 혈당 검사</h3>
+          <p style="font-size:0.92rem;">공복 및 식후 2시간 자가혈당을 측정·기록하여 식사와 운동이 내 혈당에 미치는 반응을 파악합니다.</p>
+        </div>
+        <div class="info-card">
+          <h3>9. 발 건강 관리</h3>
+          <p style="font-size:0.92rem;">매일 미지근한 물로 발을 씻고 잘 말린 뒤, 상처·물집·발톱 이상 여부를 꼼꼼히 살핍니다.</p>
+        </div>
+        <div class="info-card">
+          <h3>10. 정기적인 안과 및 신장 검사</h3>
+          <p style="font-size:0.92rem;">증상이 없더라도 매년 안저검사(망막)와 소변 알부민뇨·혈액 신장기능검사를 빠짐없이 받습니다.</p>
+        </div>
+      </div>
+
+      <!-- 하루 건강관리 실천 체크리스트 -->
+      <div style="background:#f3f6f5; border:1px solid var(--border); border-radius:var(--radius-md); padding:20px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:12px;">
+          <h3 style="font-size:1.12rem; color:var(--primary-dark);">📅 오늘의 하루 건강관리 실천 체크리스트</h3>
+          <span id="dailyHabitStatus" style="font-weight:800; color:var(--primary);">오늘 실천: 0 / 6개 완료</span>
+        </div>
+        <div class="checklist-grid" id="dailyHabitList">
+          <label class="check-item"><input type="checkbox" onchange="updateDailyHabits()"><span>아침·점심·저녁을 규칙적인 시간에 적정량 섭취했다.</span></label>
+          <label class="check-item"><input type="checkbox" onchange="updateDailyHabits()"><span>식사 시 채소·단백질을 먼저 먹고 탄수화물을 나중에 먹었다.</span></label>
+          <label class="check-item"><input type="checkbox" onchange="updateDailyHabits()"><span>식사 후 10분 이상 걷기 또는 가벼운 신체활동을 했다.</span></label>
+          <label class="check-item"><input type="checkbox" onchange="updateDailyHabits()"><span>단 음료나 과자 대신 물이나 무가당 차를 마셨다.</span></label>
+          <label class="check-item"><input type="checkbox" onchange="updateDailyHabits()"><span>오늘의 혈당을 측정하고 수치를 기록했다.</span></label>
+          <label class="check-item"><input type="checkbox" onchange="updateDailyHabits()"><span>자기 전 양발의 상처·물집·건조 상태를 확인했다.</span></label>
+        </div>
+      </div>
+    </section>
+
+    <!-- 메뉴 10. 당뇨 건강관리 자가점검 -->
+    <section class="content-section" id="menu10">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-badge">메뉴 10</span>
+          <h2 class="section-title">당뇨 건강관리 자가점검</h2>
+        </div>
+        <button type="button" onclick="resetSelfCheck()" style="background:#eaeceb; border:1px solid var(--border); padding:7px 14px; border-radius:8px; font-weight:700; cursor:pointer; font-size:0.88rem;">체크 초기화 ↻</button>
+      </div>
+
+      <p class="section-desc">평소 나의 당뇨병 예방 및 혈당 관리 생활습관을 점검해 보세요. 해당하는 항목을 체크하면 실천율과 맞춤 피드백이 자동으로 계산됩니다.</p>
+
+      <div class="progress-header">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+          <strong style="font-size:1.1rem; color:#123e2e;">나의 건강관리 실천율: <span id="selfCheckPercent" style="color:var(--primary); font-size:1.45rem;">0%</span> (<span id="selfCheckCount">0</span> / 9개 항목)</strong>
+          <span id="selfCheckBadge" class="badge-prediabetes">점검을 시작해 보세요</span>
+        </div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="selfCheckBar"></div>
+        </div>
+        <p id="selfCheckFeedback" style="font-size:0.95rem; color:var(--text-main); font-weight:600; margin-top:6px;">
+          아래 9가지 항목 중 현재 꾸준히 실천하고 있는 항목을 모두 선택해 주세요.
+        </p>
+      </div>
+
+      <div class="checklist-grid" id="selfCheckList">
+        <label class="check-item"><input type="checkbox" onchange="updateSelfCheck()"><span>1. 매일 정해진 시간에 규칙적으로 식사하고 있습니까?</span></label>
+        <label class="check-item"><input type="checkbox" onchange="updateSelfCheck()"><span>2. 과도한 단 음식, 설탕 음료, 정제 탄수화물 섭취를 피하고 있습니까?</span></label>
+        <label class="check-item"><input type="checkbox" onchange="updateSelfCheck()"><span>3. 매일 30분 이상 적절한 유산소·근력 신체활동을 하고 있습니까?</span></label>
+        <label class="check-item"><input type="checkbox" onchange="updateSelfCheck()"><span>4. 식사 후 바로 눕지 않고 식후 걷기를 실천하고 있습니까?</span></label>
+        <label class="check-item"><input type="checkbox" onchange="updateSelfCheck()"><span>5. 하루 7시간 내외의 충분한 수면을 취하고 있습니까?</span></label>
+        <label class="check-item"><input type="checkbox" onchange="updateSelfCheck()"><span>6. 정기적으로 공복 및 식후 혈당을 확인하고 기록하고 있습니까?</span></label>
+        <label class="check-item"><input type="checkbox" onchange="updateSelfCheck()"><span>7. 혈압과 콜레스테롤 수치를 목표 범위 내로 관리하고 있습니까?</span></label>
+        <label class="check-item"><input type="checkbox" onchange="updateSelfCheck()"><span>8. 매일 발의 상처, 물집, 감각 이상 등 발 상태를 확인하고 있습니까?</span></label>
+        <label class="check-item"><input type="checkbox" onchange="updateSelfCheck()"><span>9. 정기적인 병원 진료와 연 1회 안과·신장 합병증 검진을 받고 있습니까?</span></label>
+      </div>
+
+      <div style="margin-top:24px; display:flex; flex-wrap:wrap; gap:12px; justify-content:flex-end;">
+        <button type="button" class="btn-action btn-print" onclick="triggerPrint()">🖨️ 전체 페이지 인쇄하기</button>
+        <button type="button" class="btn-action btn-pdf" onclick="saveHealthReportPDF()">📄 내 계산·자가점검 결과 PDF 저장</button>
+      </div>
+    </section>
+
+    <!-- 응급상황 및 의료정보 안내 -->
+    <section class="emergency-box" aria-label="응급상황 및 의학적 주의사항 안내">
+      <h3>🚨 응급상황 대처 및 의학적 주의사항 안내</h3>
+      <ul style="padding-left:20px; font-size:0.95rem; display:flex; flex-direction:column; gap:8px;">
+        <li><strong>심한 저혈당 응급 대처:</strong> 식은땀, 심한 어지럼증, 손떨림, 두근거림, 의식 혼미 등 저혈당 증상(혈당 70mg/dL 미만)이 나타나면 즉시 하던 일을 멈추고 <strong>단순당 15~20g(사탕 3~4개, 주스 반 잔, 설탕 1큰술)</strong>을 섭취한 뒤 15분 후 혈당을 재확인하세요. 의식이 저하된 경우에는 억지로 음식을 먹이지 말고 즉시 119에 신고하여 응급실로 이송해야 합니다.</li>
+        <li><strong>뇌졸중·심근경색 의심 응급 증상:</strong> 갑작스러운 한쪽 팔다리 마비, 안면 마비, 발음 어눌함, 심한 두통(뇌졸중 의심)이나 쥐어짜는 듯한 가슴 통증, 호흡곤란, 식은땀(심근경색 의심)이 발생하면 지체 없이 <strong>119에 연락하여 즉시 응급 의료기관의 도움</strong>을 받으십시오.</li>
+        <li><strong>의료 면책 및 전문의 상담 안내:</strong> 본 홈페이지(지당지유 건강필래)의 모든 콘텐츠는 당뇨병 예방과 건강관리를 돕기 위한 <strong>교육 및 정보 제공 목적</strong>으로 제작되었으며, 의사의 전문적인 진단과 처방, 치료를 대체하지 않습니다. 개인의 연령, 동반질환, 복용 약물, 신장 기능에 따라 적절한 혈당·혈압 목표와 식사·운동 요법이 다르므로 반드시 담당 전문의와 상담하시기 바랍니다.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div style="font-size:1.15rem; font-weight:800; color:#ffffff;">지당지유 건강필래 · 당뇨병 예방 및 건강관리 종합 안내</div>
+      <p>당을 알고 생활습관을 바꾸면 건강한 내일이 열립니다. 정기적인 검진과 꾸준한 실천으로 합병증 없는 건강한 삶을 지켜가세요.</p>
+    </div>
+  </footer>
+
+  <script>
+    // 인쇄 트리거 헬퍼 함수
+    function triggerPrint() {
+      window.focus();
+      window.print();
+    }
+    window.triggerPrint = triggerPrint;
+
+    // 1. 글자 크기 조절
+    function setFontScale(scale, btn) {
+      var basePx = 17;
+      var targetPx = Math.round(basePx * scale * 10) / 10;
+      document.documentElement.style.fontSize = targetPx + 'px';
+      document.documentElement.style.setProperty('--font-scale', scale);
+
+      var buttons = document.querySelectorAll('.font-btn');
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove('active');
+      }
+      if (btn) {
+        btn.classList.add('active');
+      }
+    }
+    window.setFontScale = setFontScale;
+
+    // 2. 모바일 메뉴 토글
+    function toggleMobileMenu() {
+      document.getElementById('mainNavList').classList.toggle('open');
+    }
+    window.toggleMobileMenu = toggleMobileMenu;
+
+    document.querySelectorAll('#mainNavList a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        document.getElementById('mainNavList').classList.remove('open');
+      });
+    });
+
+    // 3. 오늘의 건강관리 실천 메시지 순환
+    var dailyMessages = [
+      "식사할 때는 채소와 반찬을 먼저 드시고, 밥이나 면은 천천히 나중에 드시면 식후 혈당 급상승을 크게 줄일 수 있습니다.",
+      "식사 후 10분~20분만 가볍게 걸어도 근육이 혈액 속 포도당을 소비해 식후 혈당 스파이크를 효과적으로 예방합니다.",
+      "당뇨병 관리의 핵심은 혈당뿐 아니라 혈압(130/80 미만)과 LDL 콜레스테롤(100 미만)을 함께 조절하는 것입니다.",
+      "매일 잠들기 전 밝은 곳에서 발바닥과 발가락 사이에 상처나 물집, 색 변화가 없는지 확인하는 습관을 길러보세요.",
+      "단 음료수나 믹스커피 대신 물이나 무가당 차를 선택하는 작은 변화가 당화혈색소를 낮추는 첫걸음입니다."
+    ];
+    var msgIdx = 0;
+    function nextDailyMessage() {
+      msgIdx = (msgIdx + 1) % dailyMessages.length;
+      document.getElementById('dailyMessageText').textContent = dailyMessages[msgIdx];
+    }
+    window.nextDailyMessage = nextDailyMessage;
+
+    // 4. 합병증 탭 전환
+    function openCompTab(panelId, btn) {
+      document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
+      document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+      document.getElementById(panelId).classList.add('active');
+      if (btn) btn.classList.add('active');
+    }
+    window.openCompTab = openCompTab;
+
+    // 5. 혈당 스파이크 그래프 토글
+    function toggleSpikeLine(mode, btn) {
+      document.querySelectorAll('.chart-toggle-btn').forEach(function(b) { b.classList.remove('active'); });
+      if (btn) btn.classList.add('active');
+      var spike = document.getElementById('lineSpikeGroup');
+      var normal = document.getElementById('lineNormalGroup');
+      if (mode === 'both') {
+        spike.style.display = 'inline';
+        normal.style.display = 'inline';
+      } else if (mode === 'spike') {
+        spike.style.display = 'inline';
+        normal.style.display = 'none';
+      } else {
+        spike.style.display = 'none';
+        normal.style.display = 'inline';
+      }
+    }
+    window.toggleSpikeLine = toggleSpikeLine;
+
+    // 5-1. 입체 당뇨 건강 식판 클릭 시 세부 식품 종류 표 전환
+    var plateData = {
+      veg: {
+        title: "🥬 채소·나물군 (식판의 50% · 매끼 2~3접시)",
+        rows: [
+          ["잎·줄기 채소", "시금치, 상추, 깻잎, 배추, 양배추, 브로콜리, 청경채, 샐러리 (생채소 1접시 약 70g)"],
+          ["나물류", "콩나물무침, 숙주나물, 취나물, 시금치나물, 고사리나물, 애호박볶음 (익힌 나물 1접시 약 70g)"],
+          ["열매·버섯·해조류", "오이, 방울토마토, 파프리카, 가지, 표고·느타리버섯, 미역, 다시마, 김"]
+        ]
+      },
+      protein: {
+        title: "🐟 단백질군 (식판의 25% · 매끼 1~2토막/접시)",
+        rows: [
+          ["어패류 (생선·해산물)", "고등어·삼치·갈치·조기(1토막 50~70g), 오징어·새우·조개살(70g)"],
+          ["콩·두부류", "두부(2쪽 80g), 순두부(1/2모 150g), 삶은 검정콩·병아리콩(2큰술 30g), 무가당 두유(1팩 190mL)"],
+          ["육류·난류", "기름기 뺀 소고기·돼지고기 살코기(탁구공 크기 2개 분량 60g), 닭가슴살(60g), 계란(1~2개)"]
+        ]
+      },
+      carb: {
+        title: "🍚 통곡물·잡곡군 (식판의 25% · 적정량 섭취)",
+        rows: [
+          ["잡곡·통곡물 밥", "현미밥, 보리밥, 귀리밥, 흑미·콩잡곡밥 (1회 180~210g, 약 2/3~1공기)"],
+          ["통곡물 빵·면류", "통밀빵(2쪽 70g), 호밀빵(2쪽 70g), 메밀국수·통밀파스타(삶은 것 1대접 150~180g)"],
+          ["전분류 (밥 대신 교환)", "찐 감자(중 1개 130g), 찐 고구마(소 1개 90g), 옥수수(1/2개 100g) — 섭취 시 밥 양 줄이기"]
+        ]
+      }
+    };
+    window.plateData = plateData;
+
+    function selectPlateCategory(cat) {
+      document.querySelectorAll('.plate-slice').forEach(function(el) { el.classList.remove('active-slice'); });
+
+      var slice = document.getElementById('slice-' + cat);
+      if (slice) slice.classList.add('active-slice');
+
+      var data = plateData[cat];
+      if (!data) return;
+      var rowsHtml = data.rows.map(function(r) {
+        return '<tr>' +
+          '<td style="padding:9px 12px;"><strong>' + r[0] + '</strong></td>' +
+          '<td style="padding:9px 12px;">' + r[1] + '</td>' +
+        '</tr>';
+      }).join('');
+
+      document.getElementById('plateDetailBox').innerHTML =
+        '<div style="font-weight:800; color:var(--primary-dark); font-size:0.98rem; margin-bottom:8px;">' + data.title + '</div>' +
+        '<table class="health-table" style="min-width:100%; font-size:0.88rem;">' +
+          '<thead>' +
+            '<tr>' +
+              '<th style="width:125px; padding:9px 12px;">세부 구분</th>' +
+              '<th style="padding:9px 12px;">해당 식품 종류 및 1회 권장 분량</th>' +
+            '</tr>' +
+          '</thead>' +
+          '<tbody>' + rowsHtml + '</tbody>' +
+        '</table>';
+    }
+    window.selectPlateCategory = selectPlateCategory;
+
+    // 6. 검사 수치 목표 비교기
+    function compareLabValues() {
+      var hba1c = parseFloat(document.getElementById('cmp-hba1c').value);
+      var fbg = parseFloat(document.getElementById('cmp-fbg').value);
+      var ppg = parseFloat(document.getElementById('cmp-ppg').value);
+      var ldl = parseFloat(document.getElementById('cmp-ldl').value);
+      var sbp = parseFloat(document.getElementById('cmp-sbp').value);
+
+      var results = [];
+      if (!isNaN(hba1c)) {
+        results.push(hba1c < 6.5
+          ? '✅ <strong>당화혈색소(' + hba1c + '%)</strong>: 일반 목표(6.5% 미만) 범위 내입니다.'
+          : '⚠️ <strong>당화혈색소(' + hba1c + '%)</strong>: 일반 목표(6.5% 미만)보다 높습니다. 식습관·운동 점검 및 의료진 상담이 필요합니다.');
+      }
+      if (!isNaN(fbg)) {
+        results.push((fbg >= 80 && fbg <= 130)
+          ? '✅ <strong>공복혈당(' + fbg + 'mg/dL)</strong>: 목표 범위(80~130mg/dL) 내입니다.'
+          : (fbg < 80
+            ? '🚨 <strong>공복혈당(' + fbg + 'mg/dL)</strong>: 목표 하한(80mg/dL)보다 낮아 저혈당 주의가 필요합니다.'
+            : '⚠️ <strong>공복혈당(' + fbg + 'mg/dL)</strong>: 목표(130mg/dL 이하)보다 높습니다.'));
+      }
+      if (!isNaN(ppg)) {
+        results.push(ppg < 180
+          ? '✅ <strong>식후 2시간 혈당(' + ppg + 'mg/dL)</strong>: 목표(180mg/dL 미만) 범위 내입니다.'
+          : '⚠️ <strong>식후 2시간 혈당(' + ppg + 'mg/dL)</strong>: 목표(180mg/dL 미만)를 초과했습니다. 식사 순서 조절과 식후 걷기를 실천해 보세요.');
+      }
+      if (!isNaN(ldl)) {
+        results.push(ldl < 100
+          ? '✅ <strong>LDL 콜레스테롤(' + ldl + 'mg/dL)</strong>: 일반 목표(100mg/dL 미만) 범위 내입니다.'
+          : '⚠️ <strong>LDL 콜레스테롤(' + ldl + 'mg/dL)</strong>: 목표(100mg/dL 미만)보다 높습니다. 포화지방 섭취를 줄이고 의료진과 상의하세요.');
+      }
+      if (!isNaN(sbp)) {
+        results.push(sbp < 130
+          ? '✅ <strong>수축기 혈압(' + sbp + 'mmHg)</strong>: 목표(130mmHg 미만) 범위 내입니다.'
+          : '⚠️ <strong>수축기 혈압(' + sbp + 'mmHg)</strong>: 목표(130mmHg 미만)보다 높습니다. 저염식과 규칙적 유산소 운동이 도움됩니다.');
+      }
+
+      var box = document.getElementById('compareResultBox');
+      if (results.length === 0) {
+        box.innerHTML = '위 입력칸에 수치를 입력하시면 목표 기준 달성 여부가 실시간으로 표시됩니다.';
+      } else {
+        box.innerHTML = '<ul style="padding-left:18px; display:flex; flex-direction:column; gap:6px;">' +
+          results.map(function(r) { return '<li>' + r + '</li>'; }).join('') + '</ul>';
+      }
+    }
+    window.compareLabValues = compareLabValues;
+
+    // 7. 표준체중, BMI, 하루 필요 열량 실시간 계산기
+    function calculateHealthMetrics() {
+      var gender = document.getElementById('calc-gender').value;
+      var heightCm = parseFloat(document.getElementById('calc-height').value);
+      var weightKg = parseFloat(document.getElementById('calc-weight').value);
+      var age = parseInt(document.getElementById('calc-age').value, 10) || 50;
+      var activity = document.getElementById('calc-activity').value;
+
+      if (isNaN(heightCm) || isNaN(weightKg) || heightCm <= 0 || weightKg <= 0) {
+        return;
+      }
+
+      var heightM = heightCm / 100;
+      var factor = gender === 'male' ? 22 : 21;
+      var stdWeight = heightM * heightM * factor;
+      var bmi = weightKg / (heightM * heightM);
+      var diff = weightKg - stdWeight;
+
+      var statusText = '';
+      var statusColor = 'var(--primary)';
+      if (bmi < 18.5) {
+        statusText = '저체중';
+        statusColor = 'var(--secondary)';
+      } else if (bmi < 23.0) {
+        statusText = '정상체중';
+        statusColor = 'var(--primary)';
+      } else if (bmi < 25.0) {
+        statusText = '과체중';
+        statusColor = 'var(--accent)';
+      } else {
+        statusText = '비만';
+        statusColor = 'var(--danger)';
+      }
+
+      var minKcalPerKg = 30;
+      var maxKcalPerKg = 35;
+      if (activity === 'light') {
+        minKcalPerKg = 25;
+        maxKcalPerKg = 30;
+      } else if (activity === 'heavy') {
+        minKcalPerKg = 35;
+        maxKcalPerKg = 40;
+      }
+
+      var minCal = Math.round(stdWeight * minKcalPerKg);
+      var maxCal = Math.round(stdWeight * maxKcalPerKg);
+
+      document.getElementById('res-std-weight').textContent = stdWeight.toFixed(1) + ' kg';
+      document.getElementById('res-bmi').textContent = bmi.toFixed(1) + ' kg/㎡';
+      var statusEl = document.getElementById('res-bmi-status');
+      statusEl.textContent = statusText;
+      statusEl.style.color = statusColor;
+
+      var diffSign = diff > 0 ? '+' : '';
+      document.getElementById('res-weight-diff').textContent = diffSign + diff.toFixed(1) + ' kg';
+      document.getElementById('res-calories').textContent = minCal.toLocaleString() + ' ~ ' + maxCal.toLocaleString() + ' kcal / 일';
+      document.getElementById('res-cal-formula').textContent = '적용 공식: 표준체중 ' + stdWeight.toFixed(1) + 'kg × 활동계수 ' + minKcalPerKg + '~' + maxKcalPerKg + ' kcal/kg';
+
+      var advice = '';
+      if (bmi >= 23.0) {
+        advice = '현재 체중이 표준체중보다 <strong>' + diff.toFixed(1) + 'kg</strong> 높습니다. 현재 체중의 5~10%만 감량해도 인슐린 저항성과 혈당 수치가 눈에 띄게 개선됩니다. 하루 ' + minCal.toLocaleString() + 'kcal 수준에서 균형 잡힌 식사와 식후 걷기를 실천해 보세요.';
+      } else if (bmi < 18.5) {
+        advice = '현재 체중이 표준체중보다 <strong>' + Math.abs(diff).toFixed(1) + 'kg</strong> 적은 저체중 상태입니다. 근손실을 막기 위해 매끼 양질의 단백질(생선, 두부, 살코기, 계란)과 적정 탄수화물을 거르지 않고 챙겨 드시는 것이 중요합니다.';
+      } else {
+        advice = '현재 <strong>정상체중 범위(BMI ' + bmi.toFixed(1) + ')</strong>를 잘 유지하고 계십니다! 하루 ' + minCal.toLocaleString() + '~' + maxCal.toLocaleString() + 'kcal 범위 내에서 규칙적인 식사와 근력·유산소 운동을 병행하여 건강한 체중을 유지하세요.';
+      }
+      if (age >= 65) {
+        advice += ' (65세 이상 어르신은 무리한 체중 감량보다 근력 유지와 저혈당 예방이 우선이므로 전문의와 적정 열량을 상의하세요.)';
+      }
+      document.getElementById('res-advice-msg').innerHTML = advice;
+    }
+    window.calculateHealthMetrics = calculateHealthMetrics;
+
+    // 8. 하루 건강관리 체크리스트 (메뉴 9)
+    function updateDailyHabits() {
+      var items = document.querySelectorAll('#dailyHabitList .check-item');
+      var checked = 0;
+      items.forEach(function(item) {
+        var cb = item.querySelector('input[type="checkbox"]');
+        if (cb.checked) {
+          item.classList.add('checked');
+          checked++;
+        } else {
+          item.classList.remove('checked');
+        }
+      });
+      document.getElementById('dailyHabitStatus').textContent = '오늘 실천: ' + checked + ' / ' + items.length + '개 완료';
+    }
+    window.updateDailyHabits = updateDailyHabits;
+
+    // 9. 당뇨 건강관리 자가점검 (메뉴 10)
+    function updateSelfCheck() {
+      var items = document.querySelectorAll('#selfCheckList .check-item');
+      var checked = 0;
+      items.forEach(function(item) {
+        var cb = item.querySelector('input[type="checkbox"]');
+        if (cb.checked) {
+          item.classList.add('checked');
+          checked++;
+        } else {
+          item.classList.remove('checked');
+        }
+      });
+
+      var total = items.length;
+      var percent = Math.round((checked / total) * 100);
+      document.getElementById('selfCheckCount').textContent = checked;
+      document.getElementById('selfCheckPercent').textContent = percent + '%';
+      document.getElementById('selfCheckBar').style.width = percent + '%';
+
+      var badge = document.getElementById('selfCheckBadge');
+      var feedback = document.getElementById('selfCheckFeedback');
+
+      if (checked === 0) {
+        badge.className = 'badge-prediabetes';
+        badge.textContent = '점검을 시작해 보세요';
+        feedback.textContent = '아래 9가지 항목 중 현재 꾸준히 실천하고 있는 항목을 모두 선택해 주세요.';
+      } else if (percent >= 80) {
+        badge.className = 'badge-normal';
+        badge.textContent = '매우 우수 (모범 관리군)';
+        feedback.textContent = '훌륭합니다! ' + total + '개 항목 중 ' + checked + '개(' + percent + '%)를 실천하고 계십니다. 지금의 좋은 생활습관을 꾸준히 이어가세요.';
+      } else if (percent >= 50) {
+        badge.className = 'badge-prediabetes';
+        badge.textContent = '양호 (추가 실천 권장)';
+        feedback.textContent = '잘하고 계십니다! ' + checked + '개 항목(' + percent + '%)을 실천 중입니다. 체크되지 않은 항목 중 오늘 바로 시작할 수 있는 1~2가지를 추가해 보세요.';
+      } else {
+        badge.className = 'badge-diabetes';
+        badge.textContent = '집중 관리 필요';
+        feedback.textContent = '현재 ' + checked + '개 항목(' + percent + '%)을 실천 중입니다. 규칙적인 식사 시간 지키기와 식후 10분 걷기부터 하나씩 실천해 보시기 바랍니다.';
+      }
+    }
+    window.updateSelfCheck = updateSelfCheck;
+
+    function resetSelfCheck() {
+      document.querySelectorAll('#selfCheckList input[type="checkbox"]').forEach(function(cb) { cb.checked = false; });
+      updateSelfCheck();
+    }
+    window.resetSelfCheck = resetSelfCheck;
+
+    // 10. 건강관리 결과 요약 리포트 PDF 저장
+    function saveHealthReportPDF() {
+      var genderText = document.getElementById('calc-gender').value === 'male' ? '남자' : '여자';
+      var height = document.getElementById('calc-height').value;
+      var weight = document.getElementById('calc-weight').value;
+      var age = document.getElementById('calc-age').value;
+      var stdWeight = document.getElementById('res-std-weight').textContent;
+      var bmi = document.getElementById('res-bmi').textContent;
+      var bmiStatus = document.getElementById('res-bmi-status').textContent;
+      var weightDiff = document.getElementById('res-weight-diff').textContent;
+      var calories = document.getElementById('res-calories').textContent;
+      var advice = document.getElementById('res-advice-msg').innerText;
+
+      var selfPercent = document.getElementById('selfCheckPercent').textContent;
+      var selfCount = document.getElementById('selfCheckCount').textContent;
+      var selfFeedback = document.getElementById('selfCheckFeedback').textContent;
+
+      var checkItemsHtml = Array.from(document.querySelectorAll('#selfCheckList .check-item')).map(function(item) {
+        var checked = item.querySelector('input').checked;
+        var text = item.querySelector('span').textContent;
+        return '<li style="margin-bottom:6px;">' + (checked ? '☑ [실천]' : '☐ [미실천]') + ' ' + text + '</li>';
+      }).join('');
+
+      var todayStr = new Date().toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' });
+
+      var reportWin = window.open('', '_blank', 'width=850,height=900');
+      if (!reportWin) {
+        alert('팝업 차단이 설정되어 있습니다. 브라우저 인쇄(Ctrl+P) 후 "PDF로 저장"을 선택해 주세요.');
+        window.print();
+        return;
+      }
+
+      reportWin.document.write(
+        '<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8">' +
+        '<title>지당지유 건강필래 - 나의 건강관리 결과 리포트</title>' +
+        '<style>' +
+          'body { font-family: "Malgun Gothic", sans-serif; padding: 32px; color: #1b2824; line-height: 1.6; }' +
+          '.header { border-bottom: 3px solid #1f483a; padding-bottom: 14px; margin-bottom: 22px; display: flex; justify-content: space-between; align-items: flex-end; }' +
+          '.title { font-size: 24px; font-weight: 800; color: #1f483a; }' +
+          '.box { border: 1px solid #cce0d8; border-radius: 10px; padding: 18px; margin-bottom: 18px; background: #f9fcfa; }' +
+          '.box h2 { font-size: 17px; color: #1f483a; margin: 0 0 12px; border-bottom: 1px solid #dcebe5; padding-bottom: 6px; }' +
+          'table { width: 100%; border-collapse: collapse; margin-bottom: 10px; }' +
+          'th, td { border: 1px solid #d5e4de; padding: 10px; text-align: left; font-size: 14px; }' +
+          'th { background: #e7eeea; width: 35%; }' +
+          '.footer-note { font-size: 12px; color: #505755; margin-top: 24px; border-top: 1px solid #ddd; padding-top: 12px; }' +
+        '</style></head><body>' +
+        '<div class="header"><div>' +
+        '<div class="title">지당지유 건강필래 · 나의 건강관리 결과 리포트</div>' +
+        '<div style="font-size:13px; color:#505755;">당뇨를 알고, 생활습관을 바꾸면 건강이 보입니다.</div>' +
+        '</div><div style="font-size:13px; font-weight:700;">작성일: ' + todayStr + '</div></div>' +
+        '<div class="box"><h2>1. 표준체중 · BMI · 하루 필요 열량 계산 결과</h2>' +
+        '<table>' +
+          '<tr><th>기본 정보</th><td>성별: ' + genderText + ' / 연령: ' + age + '세 / 키: ' + height + 'cm / 현재 체중: ' + weight + 'kg</td></tr>' +
+          '<tr><th>표준체중</th><td><strong>' + stdWeight + '</strong> (현재 체중과의 차이: ' + weightDiff + ')</td></tr>' +
+          '<tr><th>체질량지수(BMI)</th><td><strong>' + bmi + '</strong> (판정: <strong>' + bmiStatus + '</strong>)</td></tr>' +
+          '<tr><th>하루 필요 열량 추정치</th><td><strong>' + calories + '</strong></td></tr>' +
+        '</table>' +
+        '<p style="font-size:14px; margin:8px 0 0;"><strong>맞춤 안내:</strong> ' + advice + '</p></div>' +
+        '<div class="box"><h2>2. 당뇨병 주요 관리 목표 기준표</h2>' +
+        '<table>' +
+          '<tr><th>당화혈색소 / 공복 / 식후2시간</th><td>6.5% 미만 / 80~130 mg/dL / 180 mg/dL 미만</td></tr>' +
+          '<tr><th>혈압 / LDL 콜레스테롤 / 중성지방</th><td>130/80 mmHg 미만 / 100 mg/dL 미만 / 150 mg/dL 미만</td></tr>' +
+        '</table></div>' +
+        '<div class="box"><h2>3. 당뇨 건강관리 자가점검 결과 (' + selfCount + ' / 9개 · 실천율 ' + selfPercent + ')</h2>' +
+        '<p style="font-size:14px; font-weight:700; color:#1f483a;">' + selfFeedback + '</p>' +
+        '<ul style="list-style:none; padding-left:0; font-size:13.5px;">' + checkItemsHtml + '</ul></div>' +
+        '<div class="footer-note">※ 본 리포트는 건강교육 및 자가점검 참고용 자료이며, 의사의 진단 및 처방을 대체하지 않습니다. 개인별 치료 목표는 담당 의료진과 상담하시기 바랍니다.</div>' +
+        '<script>window.onload = function() { setTimeout(function() { window.print(); }, 300); };<\/script>' +
+        '</body></html>'
+      );
+      reportWin.document.close();
+    }
+    window.saveHealthReportPDF = saveHealthReportPDF;
+
+    // 페이지 로드 시 초기 계산 실행
+    window.addEventListener('DOMContentLoaded', function() {
+      calculateHealthMetrics();
+    });
+  </script>
+</body>
+</html>
